@@ -1,0 +1,62 @@
+{% extends "/documentacions/homebase.html" %}
+{% block content %}
+
+            <!-- Product card: Basic example-->
+            <!-- Page title-->
+            <div class="border-bottom pt-5 mt-2 mb-5">
+              <h1 class="mt-2 mt-md-4 mb-3 pt-5"></h1>
+              <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+                <p class="text-muted"></p>
+                <div class="ps-md-4 mb-3">
+                <span class="badge bg-success"></span>
+              </div>
+            </div>
+          </div>
+<!--==========END NAVBAR ==============-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="text-center bg-info p-2 h4">News Cursos</div>
+                {% from "_formhelpers.html" import render_field %}
+
+                <form method="post" enctype="multipart/form-data">
+                    <div class="mb-4">
+                        {{ render_field(form.nomecursos, class="form-control", placeholder="Nome do Curso", style="height: 1%" ) }}
+                        {{ render_field(form.comentarioscursos, class="form-control", placeholder="Sobre o Curso", style="height: 1%" ) }}
+                        {{ render_field(form.descriptioncursos, class="form-control", placeholder="O Vai aprender", style="height: 1%" ) }}
+                        {{ render_field(form.datainiciocursos, class="form-control", placeholder="Data Inicio", style="height: 1%" ) }}
+                        {{ render_field(form.datafimcursos, class="form-control", placeholder="Data Fim", style="height: 1%" ) }}
+                        {{ render_field(form.periodos, class="form-control", placeholder="Qual Turno", style="height: 1%" ) }}
+                        {{ render_field(form.formadores, class="form-control", placeholder="Nome do Formador", style="height: 1%" ) }}
+                        {{ render_field(form.duracaocursos, class="form-control", placeholder="Duracao do Curso", style="height: 1%" ) }}
+                        {{ render_field(form.price, class="form-control", placeholder="Preco do Curso", style="height: 1%" ) }}
+                        {{ render_field(form.licao_1, class="form-control", placeholder="licao 1", style="height: 1%" ) }}
+                        {{ render_field(form.licao_2, class="form-control", placeholder="licao 2", style="height: 1%" ) }}
+                        {{ render_field(form.licao_3, class="form-control", placeholder="licao 3", style="height: 1%" ) }}
+                        {{ render_field(form.licao_4, class="form-control", placeholder="licao 4", style="height: 1%" ) }}
+                        {{ render_field(form.licao_5, class="form-control", placeholder="licao 5", style="height: 1%" ) }}
+                        {{ render_field(form.licao_6, class="form-control", placeholder="licao 6", style="height: 1%" ) }}
+                        {{ render_field(form.licao_7, class="form-control", placeholder="licao 7", style="height: 1%" ) }}
+                        {{ render_field(form.licao_8, class="form-control", placeholder="licao 8", style="height: 1%" ) }}
+                        {{ render_field(form.licao_9, class="form-control", placeholder="licao 9", style="height: 1%" ) }}
+                      </div>
+                <div class="container">
+                    <div class="row">
+                        {% if getcursos %}
+                        <div class="col-md-4"> <input type="file" name="image_curso" id="image_curso">
+                          <a href="{{url_for('static',filename='assets/img/ecommerce/shop/' + getcursos.image_1)}}"> assets/img/ecommerce/shop/{{ getcursos.image_curso}}</a>
+                      </div>
+                      {% else %}
+                      <div class="col-md-4">{{ render_field(form.image_curso, class="form-control") }}</div>
+                      {% endif %}
+                  </div>
+              </div>
+              <p><input type="submit" value="{% if getcurso %}Update {% else %}Add{% endif %} curso" class="btn btn-primary d-block w-100" style="height: 1%">
+                </form>
+            </div>
+      <div class="col-md-1"></div>
+    </div>
+</div>
+{% endblock content %}

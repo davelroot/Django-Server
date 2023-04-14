@@ -1,0 +1,110 @@
+{% extends "/documentacions/homebase.html" %}
+{% block title %}Formador News{% endblock title %}
+
+{% block content %}
+            <!-- Product card: Basic example-->
+            <!-- Page title-->
+            <div class="border-bottom pt-5 mt-2 mb-5">
+              <h1 class="mt-2 mt-md-4 mb-3 pt-5"></h1>
+              <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+                <p class="text-muted"></p>
+                <div class="ps-md-4 mb-3">
+                <span class="badge bg-success"></span>
+              </div>
+            </div>
+          </div>
+
+<!--==========END NAVBAR ==============-->
+
+<div class="container">
+    {% include '_messages.html' %}
+    <table class="table tbale-sm">
+        <thead>
+            <th>Sr</th>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+         {% if formadores %}
+          {% for formador in formadores %}
+          <tr>
+            <td>{{loop.index}}</td>
+            <td>{{ formador.name }}</td>
+            <td><a href="{{url_for('cursosAll.updateformadores', gm=formador.id)}}" class="btn btn-sm btn-info">Edit</a></td>
+            <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal-{{formador.id}}">
+              Delete
+            </button></td>
+          </tr>
+
+
+<!--============= MODEL ===================-->
+
+<div class="modal fade" id="exampleModal-{{formador.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ formadores.name }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-danger">Are you Sure that you want to delete this brand ({{ formador.name }}) </p>
+       </div>
+       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <form action="{{url_for('cursosAll.deleteformadores', gm=formador.id)}}" method="post">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--==============MODEL ===================-->
+
+          {% endfor %}
+          {% else %}
+          {% for periodo in periodos %}
+          <tr>
+            <td>{{loop.index}}</td>
+            <td>{{ periodo.name }}</td>
+            <td> <a href="{{url_for('cursosAll.updateperiodos', gm=periodo.id)}}" class="btn btn-sm btn-info">Edit</a></td>
+            <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal-{{periodo.id}}">
+              Delete
+            </button></td>
+          </tr>
+
+
+<!--============= MODEL ===================-->
+      <div class="modal fade" id="exampleModal-{{periodo.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{periodo.name }}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p class="text-danger">Are you Sure that you want to delete this Category ({{ periodo.name }}) </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <form action="{{url_for('cursosAll.deleteperiodos', gm=periodo.id)}}" method="post">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+<!--==============MODEL ===================-->
+
+          {% endfor %}
+          {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

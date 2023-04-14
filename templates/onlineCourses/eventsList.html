@@ -1,0 +1,309 @@
+{% extends "baseCoursos.html" %} {% block title %}Nosso Centro{% endblock %} 
+{% block content %}
+
+
+
+      <!-- Events-->
+      <section class="mt-4 pt-lg-5 pt-4 pb-lg-6 pb-sm-5 pb-4 bg-repeat-0 bg-position-center-x bg-size-cover" style="background-image: url(../assets/img/online-courses/events/shapes.svg);">
+        <div class="container">
+          <h3 class="h6 mb-2 text-uppercase text-center">
+          NOSSOS EVENTOS</h3>
+          <h2 class="h1 mb-lg-5 pb-md-2 text-center">Palestras, workshops &amp; master-classes</h2>
+
+          <!-- Event filters -->
+          <form class="d-sm-flex align-items-center flex-wrap pb-4">
+            <div class="flex-fill d-sm-flex align-items-center me-sm-4 mb-3 pe-md-2">
+              <label class="mb-sm-0 me-2 pe-1 fw-bold text-nowrap" for="event-category">Categoria de eventos</label>
+              <select class="form-select bg-light" id="event-category">
+                <option>All events</option>
+                <option>Online master-class</option>
+                <option>Online lecture</option>
+                <option>Online workshop</option>
+              </select>
+            </div>
+            <div class="flex-fill d-sm-flex align-items-center me-sm-4 mb-3 pe-md-2">
+              <label class="mb-sm-0 me-2 pe-1 fw-bold text-nowrap" for="event-sort">Classificar por</label>
+              <select class="form-select bg-light" id="event-sort">
+                <option>Newest</option>
+                <option>Oldest</option>
+              </select>
+            </div>
+            <div class="flex-fill d-sm-flex align-items-center me-sm-4 mb-3 pe-md-2">
+              <label class="mb-sm-0 me-2 pe-1 fw-bold text-nowrap" for="event-show">Programa</label>
+              <select class="form-select bg-light" id="event-show">
+                <option>9</option>
+                <option>18</option>
+                <option>27</option>
+                <option>36</option>
+              </select>
+              <span class="d-sm-inline d-none ms-2 ps-1 fs-sm text-muted text-nowrap">eventos por página</span>
+            </div>
+            <div class="flex-fill d-flex align-items-center mb-3 pt-sm-0 pt-4">
+              <div class="input-group mb-0 me-sm-4 pe-sm-2">
+                <input class="form-control pe-5 rounded" type="text" placeholder="Pesquisar eventos">
+                <button class="btn btn-link me-3 px-0 position-absolute top-50 end-0 translate-middle-y zindex-5" type="button">
+                  <i class="ci-search mt-n1"></i>
+                </button>
+              </div>
+              <div class="d-sm-flex d-none nav nav-dark flex-nowrap">
+                <a class="nav-link me-3 p-0 active" href="events-list.html">
+                  <i class="ci-list lead"></i>
+                </a>
+                <a class="nav-link p-0" href="events-grid.html">
+                  <i class="ci-grid lead"></i>
+                </a>
+              </div>
+            </div>
+          </form>
+
+          <!-- Events list made of horizontal cards -->
+          <!-- Event (card) -->
+          <div class="card card-horizontal card-hover mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">05</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-1">August</h6>
+                  <span class="text-muted">11:00 – 14:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-sm-1 mb-2">
+                <a href="event-single.html" class="nav-link">Formation of the organizational structure of the company in the face of uncertainty.</a>
+              </h3>
+              <span class="text-muted">Online master-class</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+
+          <!-- Event (card) -->
+          <div class="card card-horizontal card-hover mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">24</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-1">July</h6>
+                  <span class="text-muted">11:00 – 12:30</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-sm-1 mb-2">
+                <a href="event-single.html" class="nav-link">Building a customer service department. Best Practices.</a>
+              </h3>
+              <span class="text-muted">Online lecture</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+
+          <!-- Event (card) -->
+          <div class="card card-horizontal card-hover mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">16</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-1">July</h6>
+                  <span class="text-muted">10:00 – 13:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-sm-1 mb-2">
+                <a href="event-single.html" class="nav-link">How to apply methods of speculative design in practice. Worldbuilding prototyping.</a>
+              </h3>
+              <span class="text-muted">Online workshop</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+
+          <!-- Event (card) -->
+          <div class="card card-horizontal card-hover mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">10</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-1">July</h6>
+                  <span class="text-muted">9:00 – 14:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-sm-1 mb-2">
+                <a href="event-single.html" class="nav-link">Find and evaluate: search and assessment tools for candidates.</a>
+              </h3>
+              <span class="text-muted">Online workshop</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+
+          <!-- Event (card) -->
+          <div class="card card-horizontal card-hover mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">27</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-1">June</h6>
+                  <span class="text-muted">15:00 – 19:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-sm-1 mb-2">
+                <a href="event-single.html" class="nav-link">Connection to Microsoft Excel and Google Sheets, Data Visualization in Power BI.</a>
+              </h3>
+              <span class="text-muted">Online master-class</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+
+          <!-- Event (card) -->
+          <div class="card card-horizontal card-hover mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">15</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-1">June</h6>
+                  <span class="text-muted">10:00 – 12:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-sm-1 mb-2">
+                <a href="event-single.html" class="nav-link">Marketing or growth hacking: main differences and what business needs.</a>
+              </h3>
+              <span class="text-muted">Online lecture</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+
+          <!-- Event (card) -->
+          <div class="card card-horizontal card-hover mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">02</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-1">June</h6>
+                  <span class="text-muted">11:00 – 13:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-sm-1 mb-2">
+                <a href="event-single.html" class="nav-link">How to brief a client and present your design to approve it from the first show.</a>
+              </h3>
+              <span class="text-muted">Online lecture</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+
+          <!-- Event (card) -->
+          <div class="card card-horizontal card-hover mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">29</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-1">May</h6>
+                  <span class="text-muted">11:00 – 13:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-sm-1 mb-2">
+                <a href="event-single.html" class="nav-link">Who is a project manager and do I want to be PM?</a>
+              </h3>
+              <span class="text-muted">Online lecture</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+
+          <!-- Event (card) -->
+          <div class="card card-horizontal card-hover mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">18</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-1">May</h6>
+                  <span class="text-muted">10:00 – 12:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-sm-1 mb-2">
+                <a href="event-single.html" class="nav-link">The company's business page as an additional tool to support the announcement of vacancies.</a>
+              </h3>
+              <span class="text-muted">Online lecture</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+
+          <!-- Pagination: With icons -->
+          <nav class="mb-4 pt-md-5 pt-sm-3" aria-label="Page navigation example">
+            <ul class="pagination justify-content-center mb-0">
+              <li class="page-item d-sm-none">
+                <span class="page-link page-link-static">1 / 4</span>
+              </li>
+              <li class="page-item active d-none d-sm-block">
+                <span class="page-link">1
+                  <span class="visually-hidden">(current)</span>
+                </span>
+              </li>
+              <li class="page-item d-none d-sm-block" aria-current="page">
+                <a class="page-link" href="events-list.html#">2</a>
+              </li>
+              <li class="page-item d-none d-sm-block">
+                <a class="page-link" href="events-list.html#">3</a>
+              </li>
+              <li class="page-item d-none d-sm-block">
+                <a class="page-link" href="events-list.html#">4</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="events-list.html#">
+                  <i class="ci-arrow-right"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </section>
+
+
+      <!-- Subscribe -->
+      <section class="py-lg-6 py-5 bg-faded-primary bg-repeat-0 bg-position-center-bottom bg-size-cover" style="background-image: url(../assets/img/online-courses/subscribe-bg.png);">
+        <div class="container pt-md-4 pt-3 pb-md-5 pb-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+              <h3 class="h6 mb-2 text-uppercase text-center">Don’t miss anything</h3>
+              <h2 class="h1 mb-lg-5 pb-md-2 text-center">Subscribe to the Createx School announcements</h2>
+            </div>
+            <div class="col-lg-6 col-md-8 col-sm-10">
+              <form class="input-group needs-validation" novalidate>
+                <input class="form-control rounded bg-light" type="email" placeholder="Your working email" required>
+                <button class="btn btn-gradient btn-hover-shadow ms-md-4 ms-sm-3 ms-2 rounded" type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+{% endblock%}

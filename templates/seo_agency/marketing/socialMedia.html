@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block title %}Publicidade e Marketing{% endblock %}
+
+{% block content %}
+      <!-- Page title-->
+      <section class="py-md-6 py-5 bg-dark jarallax" data-jarallax data-speed="0.6">
+        <div class="container mt-5 py-lg-4">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-alt breadcrumb-light justify-content-center mb-sm-4">
+              <li class="breadcrumb-item">
+                <a href="index.html">
+                  <i class="ci-home"></i>
+                </a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="">Agencia</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Publicidade e Marketing</li>
+            </ol>
+          </nav>
+          <h1 class="display-1 text-center text-light">MARKETING DIGITAL</h1>
+          <p class="mx-auto mb-lg-6 mb-sm-5 pb-3 lead text-center text-light opacity-60" style="max-width: 810px;"></p>
+
+          <div class="d-flex flex-md-row flex-column justify-content-center">
+            {% for logotipo in logotipos %}
+            <div class="d-flex flex-md-row flex-column align-items-center mb-md-0 mb-4 px-md-0 px-sm-5 px-4 pb-md-0 pb-2 text-md-start text-center">
+              <i class="ci-chat me-md-2 mb-md-0 mb-3 text-primary" style="font-size: 40px;"></i>
+              <div class="ps-md-1">
+                <h6 class="mb-0 fs-sm text-light opacity-60">Fale conosco.</h6>
+                <a href="mailto:{{logotipo.emailsglass}}" class="fs-lg text-decoration-none text-light">{{logotipo.emailsglass}}</a>
+              </div>
+            </div>
+            <span class="divider-vertical divider-light d-md-block d-none mx-5"></span>
+            <div class="d-flex flex-md-row flex-column align-items-center mb-md-0 mb-4 px-md-0 px-sm-5 px-4 pb-md-0 pb-2 text-md-start text-center">
+              <i class="ci-iphone me-md-2 mb-md-0 mb-3 text-primary" style="font-size: 40px;"></i>
+              <div class="ps-md-1">
+                <h6 class="mb-0 fs-sm text-light opacity-60">Ligue para nós.</h6>
+                <a href="tel:(+244){{logotipo.contactglass}}" class="fs-lg text-decoration-none text-light">{{logotipo.contactglass}}</a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+
+        <!-- Parallax bg -->
+        <div class="jarallax-img bg-repeat-0 bg-dark opacity-50" style="background-image: url({{ url_for('static', filename = 'assets/img/seo-agency/about/careers/page-title-bg.jpg') }});"></div>
+      </section>
+
+
+{% endblock %}

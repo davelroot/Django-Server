@@ -1,0 +1,100 @@
+
+         <!-- Vertically centered modal-->
+          <div class="modal fade" id="basicolojavirtual" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Plano Basico Loja Virtual</h4>
+                  <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                {% from "_formhelpers.html" import render_field %}
+                <form class="needs-validation" novalidate method="POST">
+                  <div class="mb-4">
+
+                    {{ render_field(form.nameDaEmpresa, class="form-control", placeholder="Seu Nome", style="height: 1%;" ) }}
+                    {{ render_field(form.localizacaoDaEmpresa, class="form-control", placeholder="Digite sua Morada/Bairro/Rua/Travessa", style="height: 1%;" ) }}
+                    {{ render_field(form.EmailDaEmpresa, class="form-control", placeholder="Digite seu Email",  style="height: 1%;" ) }}
+                    {{ render_field(form.conctatoDaEmpresa, class="form-control", placeholder="Digite seus Conatctos", style="height: 1%;" ) }}
+                    {{ render_field(form.sobreSuaEmpresa, class="form-control", placeholder="Fale um pouco sobre seu Negocio?", style="height: 1%;" ) }}
+                    {{ render_field(form.objetivoDoSeuSite, class="form-control", placeholder="Objectivo do seu WebSite?", style="height: 1%;" ) }}
+                    {{ render_field(form.sitesReferencia, class="form-control", placeholder="WebSites de Referencias",  style="height: 1%;" ) }}
+                    {{ render_field(form.coresPadraoVcQuer, class="form-control", placeholder="Sua cores Padrao", style="height: 1%;" ) }}
+                    {{ render_field(form.plano_preco, class="form-control", placeholder=" ", style="height: 1%;" ) }}
+                                
+                  </div>
+                  {{ form.submit( class="btn btn-primary btn-sm", style="top: 1.5rem; right: 1.5rem; height: 1%;") }}
+                  <button class="btn btn-secondary btn-sm" type="button" data-bs-dismiss="modal">Close</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>         
+         
+         <!-- Vertically centered modal-->
+          <div class="modal fade" id="optimolojavirtual" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Planos Optimo Loja Virtual</h4>
+                  <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                {% from "_formhelpers.html" import render_field %}
+                <form class="needs-validation" novalidate method="POST">
+                  <div class="mb-4">
+
+                    {{ render_field(form.nameDaEmpresa, class="form-control", placeholder="Seu Nome", style="height: 1%;" ) }}
+                    {{ render_field(form.localizacaoDaEmpresa, class="form-control", placeholder="Digite sua Morada/Bairro/Rua/Travessa", style="height: 1%;" ) }}
+                    {{ render_field(form.EmailDaEmpresa, class="form-control", placeholder="Digite seu Email",  style="height: 1%;" ) }}
+                    {{ render_field(form.conctatoDaEmpresa, class="form-control", placeholder="Digite seus Conatctos", style="height: 1%;" ) }}
+                    {{ render_field(form.sobreSuaEmpresa, class="form-control", placeholder="Fale um pouco sobre seu Negocio?", style="height: 1%;" ) }}
+                    {{ render_field(form.objetivoDoSeuSite, class="form-control", placeholder="Objectivo do seu WebSite?", style="height: 1%;" ) }}
+                    {{ render_field(form.sitesReferencia, class="form-control", placeholder="WebSites de Referencias",  style="height: 1%;" ) }}
+                    {{ render_field(form.coresPadraoVcQuer, class="form-control", placeholder="Sua cores Padrao", style="height: 1%;" ) }}
+                    {{ render_field(form.plano_preco, class="form-control", placeholder=" ", style="height: 1%;" ) }}
+
+                  </div>
+                  {{ form.submit( class="btn btn-primary btn-sm", style="top: 1.5rem; right: 1.5rem; height: 1%;") }}
+                  <button class="btn btn-secondary btn-sm" type="button" data-bs-dismiss="modal">Close</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+         <!-- Vertically centered modal-->
+        <div class="modal fade" id="premiolojavirtual" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Planos Priumos Loja Virtual</h4>
+                  <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                {% from "_formhelpers.html" import render_field %}
+                <form class="needs-validation" novalidate method="POST">
+                  <div class="mb-4">
+
+                    {{ render_field(form.nameDaEmpresa, class="form-control", placeholder="Seu Nome", style="height: 1%;" ) }}
+                    {{ render_field(form.localizacaoDaEmpresa, class="form-control", placeholder="Digite sua Morada/Bairro/Rua/Travessa", style="height: 1%;" ) }}
+                    {{ render_field(form.EmailDaEmpresa, class="form-control", placeholder="Digite seu Email",  style="height: 1%;" ) }}
+                    {{ render_field(form.conctatoDaEmpresa, class="form-control", placeholder="Digite seus Conatctos", style="height: 1%;" ) }}
+                    {{ render_field(form.sobreSuaEmpresa, class="form-control", placeholder="Fale um pouco sobre seu Negocio?", style="height: 1%;" ) }}
+                    {{ render_field(form.objetivoDoSeuSite, class="form-control", placeholder="Objectivo do seu WebSite?", style="height: 1%;" ) }}
+                    {{ render_field(form.sitesReferencia, class="form-control", placeholder="WebSites de Referencias",  style="height: 1%;" ) }}
+                    {{ render_field(form.coresPadraoVcQuer, class="form-control", placeholder="Sua cores Padrao", style="height: 1%;" ) }}
+                    {{ render_field(form.plano_preco, class="form-control", placeholder=" ", style="height: 1%;" ) }}
+
+                  </div>
+                  {{ form.submit( class="btn btn-primary btn-sm", style="top: 1.5rem; right: 1.5rem; height: 1%;") }}
+                  <button class="btn btn-secondary btn-sm" type="button" data-bs-dismiss="modal">Close</button>
+                </form>
+                </div>
+              </div>
+            </div>
+        </div>
+
+

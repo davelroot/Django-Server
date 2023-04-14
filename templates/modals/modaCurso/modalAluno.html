@@ -1,0 +1,33 @@
+<!-- Sign in modal-->
+
+      <div class="modal fade" id="modalcoursesingle" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content border-0">
+            <!-- Sign up form -->
+            <!-- Sign in form -->
+            <div class="view show" id="modal-signin-view">
+              <div class="modal-header border-0 pb-0 px-md-5 px-4 d-block position-relative">
+                <h3 class="modal-title mt-4 mb-0 text-center">Ficha de Inscricao</h3>
+                <button type="button" class="btn-close position-absolute" style="top: 1.5rem; right: 1.5rem;" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+              <div class="modal-body px-md-5 px-4">
+                {% if cursos %}
+                {% for curso in cursos %}
+                <p class="fs-sm text-muted text-center">Curso de:{{curso.nomecursos}} </p>
+                
+                <form class="needs-validation" novalidate method="POST">
+                  <div class="mb-4">
+
+
+
+                  </div>
+
+                </form>
+                {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,391 @@
+{% extends "baseCoursos.html" %} {% block title %}Nosso Centro{% endblock %} 
+{% block content %}
+
+
+      <!-- Courses grid-->
+      <section class="mt-4 pt-lg-5 pt-4 pb-lg-6 pb-5 bg-repeat-0 bg-position-center-x" style="background-image: url(../assets/img/online-courses/courses/shape.svg);">
+        <div class="container py-2">
+
+          <!-- Filterable grid container. IMPORTANT: it should wrap filters/sorters and target grid of items in order for plugin to work! -->
+          <div data-filter-grid>
+            <h3 class="h6 mb-2 text-uppercase text-center">APROVEITE SEUS ESTUDOS!</h3>
+            <h2 class="h1 mb-lg-5 pb-md-2 text-center">Nossos cursos online</h2>
+            <div class="row mb-lg-5 mb-4 pb-md-2">
+              <div class="col-sm-8">
+                <div data-simplebar data-simplebar-auto-hide="false">
+
+                  <!-- Filter navs -->
+                  <ul class="nav nav-tabs nav-fill flex-nowrap mb-3 text-nowrap">
+                    <li class="nav-item mb-0">
+                      <span class="nav-link active" data-filter="all">
+                        All
+                        <sup class="ms-1">12</sup>
+                      </span>
+                    </li>
+                    <li class="nav-item mb-0">
+                      <span class="nav-link" data-filter=".marketing">
+                        Marketing
+                        <sup class="ms-1">4</sup>
+                      </span>
+                    </li>
+                    <li class="nav-item mb-0">
+                      <span class="nav-link" data-filter=".management">
+                        Management
+                        <sup class="ms-1">3</sup>
+                      </span>
+                    </li>
+                    <li class="nav-item mb-0">
+                      <span class="nav-link" data-filter=".hr-recruiting">
+                        HR &amp; Recruiting
+                        <sup class="ms-1">5</sup>
+                      </span>
+                    </li>
+                    <li class="nav-item mb-0">
+                      <span class="nav-link" data-filter=".design">
+                        Design
+                        <sup class="ms-1">2</sup>
+                      </span>
+                    </li>
+                    <li class="nav-item mb-0">
+                      <span class="nav-link" data-filter=".development">
+                        Development
+                        <sup class="ms-1">3</sup>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4 offset-lg-1 mt-sm-0 mt-4">
+
+                <!-- Search input -->
+                <div class="input-group">
+                  <input class="form-control rounded pe-5" type="text" placeholder="Search courses">
+                  <button class="btn btn-link px-0 position-absolute top-50 end-0 translate-middle-y me-3 zindex-5" type="button">
+                    <i class="ci-search mt-n1"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Filterable grid of items -->
+            <div class="row">
+
+              <!-- Item -->
+              <div class="grid-item marketing col-lg-4 col-sm-6 mb-sm-grid-gutter mb-3">
+                <article class="image-scale card card-hover shadow h-100">
+                  <a class="image-inner card-header p-0 border-0 card-image-top" href="course-single.html">
+                    <img src="../assets/img/online-courses/courses/curator/01.jpg" alt="Jerome Bell">
+                  </a>
+                  <div class="card-body pb-1">
+                    <span class="badge bg-success mb-3">Marketing</span>
+                    <h3 class="h5 mb-2 pt-1 nav-dark">
+                      <a class="nav-link" href="course-single.html">The Ultimate Google Ads Training Course</a>
+                    </h3>
+                  </div>
+                  <div class="card-footer pt-2 pb-4 border-0">
+                    <div class="text-muted">
+                      <span class="fw-bold text-primary">$100</span>
+                      <span class="text-border px-1">|</span>
+                      by Jerome Bell
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Item -->
+              <div class="grid-item management col-lg-4 col-sm-6 mb-sm-grid-gutter mb-3">
+                <article class="image-scale card card-hover shadow h-100">
+                  <a class="image-inner card-header p-0 border-0 card-image-top" href="course-single.html">
+                    <img src="../assets/img/online-courses/courses/curator/02.jpg" alt="Marvin McKinney">
+                  </a>
+                  <div class="card-body pb-1">
+                    <span class="badge bg-info mb-3">Management</span>
+                    <h3 class="h5 mb-2 pt-1 nav-dark">
+                      <a class="nav-link" href="course-single.html">Product Management Fundamentals</a>
+                    </h3>
+                  </div>
+                  <div class="card-footer pt-2 pb-4 border-0">
+                    <div class="text-muted">
+                      <span class="fw-bold text-primary">$480</span>
+                      <span class="text-border px-1">|</span>
+                      by Marvin McKinney
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Item -->
+              <div class="grid-item hr-recruiting col-lg-4 col-sm-6 mb-sm-grid-gutter mb-3">
+                <article class="image-scale card card-hover shadow h-100">
+                  <a class="image-inner card-header p-0 border-0 card-image-top" href="course-single.html">
+                    <img src="../assets/img/online-courses/courses/curator/03.jpg" alt="Leslie Alexander Li">
+                  </a>
+                  <div class="card-body pb-1">
+                    <span class="badge bg-warning mb-3">HR &amp; Recruiting</span>
+                    <h3 class="h5 mb-2 pt-1 nav-dark">
+                      <a class="nav-link" href="course-single.html">HR  Management and Analytics</a>
+                    </h3>
+                  </div>
+                  <div class="card-footer pt-2 pb-4 border-0">
+                    <div class="text-muted">
+                      <span class="fw-bold text-primary">$200</span>
+                      <span class="text-border px-1">|</span>
+                      by Leslie Alexander Li
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Item -->
+              <div class="grid-item marketing col-lg-4 col-sm-6 mb-sm-grid-gutter mb-3">
+                <article class="image-scale card card-hover shadow h-100">
+                  <a class="image-inner card-header p-0 border-0 card-image-top" href="course-single.html">
+                    <img src="../assets/img/online-courses/courses/curator/04.jpg" alt="Kristin Watson">
+                  </a>
+                  <div class="card-body pb-1">
+                    <span class="badge bg-success mb-3">Marketing</span>
+                    <h3 class="h5 mb-2 pt-1 nav-dark">
+                      <a class="nav-link" href="course-single.html">Brand Management &amp; PR Communications</a>
+                    </h3>
+                  </div>
+                  <div class="card-footer pt-2 pb-4 border-0">
+                    <div class="text-muted">
+                      <span class="fw-bold text-primary">$530</span>
+                      <span class="text-border px-1">|</span>
+                      by Kristin Watson
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Item -->
+              <div class="grid-item design col-lg-4 col-sm-6 mb-sm-grid-gutter mb-3">
+                <article class="image-scale card card-hover shadow h-100">
+                  <a class="image-inner card-header p-0 border-0 card-image-top" href="course-single.html">
+                    <img src="../assets/img/online-courses/courses/curator/05.jpg" alt="Guy Hawkins">
+                  </a>
+                  <div class="card-body pb-1">
+                    <span class="badge text-light mb-3" style="background-color: #F52F6E;">Design</span>
+                    <h3 class="h5 mb-2 pt-1 nav-dark">
+                      <a class="nav-link" href="course-single.html">Graphic Design Basic</a>
+                    </h3>
+                  </div>
+                  <div class="card-footer pt-2 pb-4 border-0">
+                    <div class="text-muted">
+                      <span class="fw-bold text-primary">$500</span>
+                      <span class="text-border px-1">|</span>
+                      by Guy Hawkins
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Item -->
+              <div class="grid-item management col-lg-4 col-sm-6 mb-sm-grid-gutter mb-3">
+                <article class="image-scale card card-hover shadow h-100">
+                  <a class="image-inner card-header p-0 border-0 card-image-top" href="course-single.html">
+                    <img src="../assets/img/online-courses/courses/curator/06.jpg" alt="Dianne Russell">
+                  </a>
+                  <div class="card-body pb-1">
+                    <span class="badge bg-info mb-3">Management</span>
+                    <h3 class="h5 mb-2 pt-1 nav-dark">
+                      <a class="nav-link" href="course-single.html">Business Development Management</a>
+                    </h3>
+                  </div>
+                  <div class="card-footer pt-2 pb-4 border-0">
+                    <div class="text-muted">
+                      <span class="fw-bold text-primary">$400</span>
+                      <span class="text-border px-1">|</span>
+                      by Dianne Russell
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Item -->
+              <div class="grid-item development col-lg-4 col-sm-6 mb-sm-grid-gutter mb-3">
+                <article class="image-scale card card-hover shadow h-100">
+                  <a class="image-inner card-header p-0 border-0 card-image-top" href="course-single.html">
+                    <img src="../assets/img/online-courses/courses/curator/07.jpg" alt="Brooklyn Simmons">
+                  </a>
+                  <div class="card-body pb-1">
+                    <span class="badge text-light mb-3" style="background-color: #7772F1;">Development</span>
+                    <h3 class="h5 mb-2 pt-1 nav-dark">
+                      <a class="nav-link" href="course-single.html">Highload Software Architecture</a>
+                    </h3>
+                  </div>
+                  <div class="card-footer pt-2 pb-4 border-0">
+                    <div class="text-muted">
+                      <span class="fw-bold text-primary">$600</span>
+                      <span class="text-border px-1">|</span>
+                      by Brooklyn Simmons
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Item -->
+              <div class="grid-item hr-recruiting col-lg-4 col-sm-6 mb-sm-grid-gutter mb-3">
+                <article class="image-scale card card-hover shadow h-100">
+                  <a class="image-inner card-header p-0 border-0 card-image-top" href="course-single.html">
+                    <img src="../assets/img/online-courses/courses/curator/08.jpg" alt="Kathryn Murphy">
+                  </a>
+                  <div class="card-body pb-1">
+                    <span class="badge bg-warning mb-3">HR &amp; Recruiting</span>
+                    <h3 class="h5 mb-2 pt-1 nav-dark">
+                      <a class="nav-link" href="course-single.html">Human Resources – Selection and Recruitment</a>
+                    </h3>
+                  </div>
+                  <div class="card-footer pt-2 pb-4 border-0">
+                    <div class="text-muted">
+                      <span class="fw-bold text-primary">$150</span>
+                      <span class="text-border px-1">|</span>
+                      by Kathryn Murphy
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Item -->
+              <div class="grid-item marketing col-lg-4 col-sm-6 mb-sm-grid-gutter mb-3">
+                <article class="image-scale card card-hover shadow h-100">
+                  <a class="image-inner card-header p-0 border-0 card-image-top" href="course-single.html">
+                    <img src="../assets/img/online-courses/courses/curator/09.jpg" alt="Cody Fisher">
+                  </a>
+                  <div class="card-body pb-1">
+                    <span class="badge text-light mb-3" style="background-color: #F52F6E;">Design</span>
+                    <h3 class="h5 mb-2 pt-1 nav-dark">
+                      <a class="nav-link" href="course-single.html">User Experience. Human-centered Design</a>
+                    </h3>
+                  </div>
+                  <div class="card-footer pt-2 pb-4 border-0">
+                    <div class="text-muted">
+                      <span class="fw-bold text-primary">$240</span>
+                      <span class="text-border px-1">|</span>
+                      by Cody Fisher
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- Load more btn -->
+          <div class="mt-sm-5 mt-4 text-center">
+            <button class="btn btn-lg btn-link load-more-btn p-0 text-decoration-none" type="button">
+              <i class="ci-arrow-convert mt-n1 me-3 align-middle"></i>
+              Carregar mais
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Testimonials -->
+      <section class="bg-secondary jarallax" data-jarallax data-speed="0.8">
+        <div class="jarallax-img" style="background-image: url(../assets/img/online-courses/home/shapes/03-team-testimonials.svg);"></div>
+        <div class="container pt-lg-6 pt-5 pb-lg-5 pb-4">
+          <h3 class="h6 mb-2 text-uppercase text-sm-center">DEPOIMENTOS</h3>
+          <h2 class="h1 mb-lg-5 pb-md-2 text-sm-center">O que nossos alunos dizem</h2>
+
+          <!-- Carousel -->
+          <div class="tns-carousel-wrapper tns-nav-outside tns-controls-outside pb-4">
+            <div class="tns-carousel-inner" data-carousel-options='{
+              "autoHeight": true,
+              "responsive": {
+                "0": {
+                  "controls": false
+                },
+                "768": {
+                  "controls": true
+                }
+              }
+            }'>
+
+              <!-- Carousel item -->
+              <div class="px-md-4">
+                <div class="blockquote-card card border-0 mb-md-4">
+                  <div class="card-body mt-sm-4 mx-xl-5 mx-sm-4 pb-0">
+                    <blockquote class="blockquote">
+                      <p class="lead">Vero dolores exercitationem quidem eum sit accusamus. Quisquam cumque nesciunt fugiat quae delectus quo earum deleniti, labore odio sint recusandae aperiam aut nemo placeat pariatur beatae dignissimos amet quos! A ipsam soluta possimus quisquam commodi natus nam aperiam ratione deleniti.</p>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer mb-sm-4 mx-xl-5 mx-sm-4 pt-0 border-0 d-flex align-items-center">
+                    <img class="me-3 rounded-circle" src="../assets/img/online-courses/testimonials/01.jpg" width="72" alt="Author">
+                    <div>
+                      <h3 class="h6 mb-0">Courtney Alexander</h3>
+                      <span class="fs-sm text-muted">Position, Company </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel item -->
+              <div class="px-md-4">
+                <div class="blockquote-card card border-0 mb-md-4">
+                  <div class="card-body mt-sm-4 mx-xl-5 mx-sm-4 pb-0">
+                    <blockquote class="blockquote">
+                      <p class="lead">Optio deleniti eos harum minus mollitia aut labore maxime rem ex dolores, dignissimos quidem exercitationem dicta praesentium quasi quia nam expedita sed blanditiis alias facere magnam pariatur asperiores. Ad et ullam eos maiores culpa reiciendis delectus ipsa. Eveniet tempora vel quo repellendus nihil, veniam numquam.</p>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer mb-sm-4 mx-xl-5 mx-sm-4 pt-0 border-0 d-flex align-items-center">
+                    <img class="me-3 rounded-circle" src="../assets/img/online-courses/testimonials/02.jpg" width="72" alt="Author">
+                    <div>
+                      <h3 class="h6 mb-0">Eleanor Pena</h3>
+                      <span class="fs-sm text-muted">Position, Course</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Certificate -->
+      <section class="container py-lg-6 py-5">
+        <div class="row align-items-center py-3">
+          <div class="col-md-5 col-sm-6 me-auto">
+            <div class="col-lg-9 px-0">
+              <h3 class="h6 mb-2 text-uppercase">CERTIFICADO CREATEX</h3>
+              <h2 class="h1 mb-lg-5">Sua experiência será confirmada</h2>
+              <p>Somos credenciados por organizações profissionais e institutos internacionais:</p>
+            </div>
+            <ul class="list-unstyled d-flex flex-sm-nowrap flex-wrap">
+              <li class="mb-lg-0 mb-3 me-4 pe-3">
+                <img src="../assets/img/online-courses/logo/eu-business-school.svg" alt="EU Business School">
+              </li>
+              <li class="mb-lg-0 mb-3 me-4 pe-3">
+                <img src="../assets/img/online-courses/logo/mcgill-university.svg" alt="Mcgill University">
+              </li>
+              <li class="mb-lg-0 mb-3 me-4 pe-3">
+                <img src="../assets/img/online-courses/logo/incae-business-school.svg" alt="Incae Business School">
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-7 col-sm-6">
+            <img src="../assets/img/online-courses/courses/certificate.jpg" alt="Certificate" class="rounded shadow position-relative">
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Subscribe -->
+      <section class="py-lg-6 py-5 bg-faded-primary bg-repeat-0 bg-position-center-bottom bg-size-cover" style="background-image: url(../assets/img/online-courses/subscribe-bg.png);">
+        <div class="container pt-md-4 pt-3 pb-md-5 pb-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+              <h3 class="h6 mb-2 text-uppercase text-center">Don’t miss anything</h3>
+              <h2 class="h1 mb-lg-5 pb-md-2 text-center">Subscribe to the Createx School announcements</h2>
+            </div>
+            <div class="col-lg-6 col-md-8 col-sm-10">
+              <form class="input-group needs-validation" novalidate>
+                <input class="form-control rounded bg-light" type="email" placeholder="Your working email" required>
+                <button class="btn btn-gradient btn-hover-shadow ms-md-4 ms-sm-3 ms-2 rounded" type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}

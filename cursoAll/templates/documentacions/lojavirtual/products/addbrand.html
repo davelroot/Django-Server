@@ -1,0 +1,71 @@
+            <!-- Product card: Basic example-->
+            <!-- Page title-->
+            <div class="border-bottom pt-5 mt-2 mb-5">
+              <h1 class="mt-2 mt-md-4 mb-3 pt-5"></h1>
+              <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+                <p class="text-muted"></p>
+                <div class="ps-md-4 mb-3">
+                <span class="badge bg-success"></span>
+              </div>
+            </div>
+          </div>
+
+<div class="content-section">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content border-0">
+          <!-- Sign in form -->
+            <div class="view show" id="modal-signin-view">
+              {% if brands %}
+              <div class="modal-header border-0 pb-0 px-md-5 px-4 d-block position-relative">
+                <h3 class="modal-title mt-4 mb-0 text-center">Add a Brand</h3>
+            </div>
+              <div class="modal-body px-md-5 px-4">
+
+                {% include '_messages.html' %}
+                <form class="needs-validation" method="POST" novalidate>
+
+                  <fieldset class="form-group">
+                  <div class="mb-4">
+
+                    <input class="form-control" type="text" name="brand">
+                    <input class="form-control" type="submit" value="Add brand">
+                  </div>
+
+                  </fieldset>
+
+                </form>
+                {% else %}
+                            <!-- Product card: Basic example-->
+            <!-- Page title-->
+            <div class="border-bottom pt-5 mt-2 mb-5">
+              <h1 class="mt-2 mt-md-4 mb-3 pt-5"></h1>
+              <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+                <p class="text-muted"></p>
+                <div class="ps-md-4 mb-3">
+                <span class="badge bg-success"></span>
+              </div>
+            </div>
+          </div>
+                <div class="modal-header border-0 pb-0 px-md-5 px-4 d-block position-relative">
+                  <h3 class="modal-title mt-4 mb-0 text-center">Add a Category</h3>
+              </div>
+              {% include '_messages.html' %}
+                <form class="needs-validation" method="POST" novalidate>
+
+                  <fieldset class="form-group">
+                  <div class="mb-4">
+
+                    <input class="form-control" type="text" name="category">
+                    <input class="form-control" type="submit" value="Add category">
+
+                  </div>
+
+                  </fieldset>
+
+                </form>
+                {% endif %}
+              </div>
+            </div>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,96 @@
+{% extends "base.html" %} {% block title %}Nossos Contactos{% endblock %}
+{% block content %}
+      <!-- Page title-->
+      <section class="py-md-6 py-5 bg-dark jarallax" data-jarallax data-speed="0.6">
+        <div class="container mt-5 py-lg-4">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-alt breadcrumb-light justify-content-center mb-sm-4">
+              <li class="breadcrumb-item">
+                <a href="index.html">
+                  <i class="ci-home"></i>
+                </a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Contactos</li>
+            </ol>
+          </nav>
+          <h1 class="display-1 text-center text-light">Contactos</h1>
+          <div class="d-flex flex-md-row flex-column justify-content-between pt-lg-5 pt-4">
+            {% if logotipos %}
+            {% for logotipo in logotipos %}
+            <div class="d-flex flex-lg-row flex-column align-items-lg-start align-items-center mb-md-0 mb-4 px-lg-0 px-sm-4 px-3 pb-md-0 pb-2 text-lg-start text-center">
+              <i class="ci-map-pin-outline me-lg-2 mb-lg-0 mb-3 text-primary" style="font-size: 40px;"></i>
+              <div class="ps-lg-1">
+                <h5 class="mb-0 fs-sm text-light opacity-60">Visite-nos</h5>
+                <span class="d-block text-light">2464 Royal Ln. Mesa, <br> New Jersey 45463, USA</span>
+                <a href="contacts.html#" class="text-decoration-none">Veja no mapa</a>
+              </div>
+            </div>
+            <span class="divider-vertical divider-light d-md-block d-none"></span>
+            <div class="d-flex flex-lg-row flex-column align-items-lg-start align-items-center mb-md-0 mb-4 px-lg-0 px-sm-4 px-3 pb-md-0 pb-2 text-lg-start text-center">
+              <i class="ci-iphone me-lg-2 mb-lg-0 mb-3 text-primary" style="font-size: 40px;"></i>
+              <div class="ps-lg-1">
+                <h5 class="mb-0 fs-sm text-light opacity-60">Ligue para nós</h5>
+                <a href="tel:(+244){{ logotipo.contactglass }}" class="text-decoration-none text-light">{{ logotipo.contactglass }}</a>
+                <br>
+                <a href="tel:(+244){{ logotipo.contactglass }}" class="text-decoration-none text-light">{{ logotipo.contactglass2 }}</a>
+              </div>
+            </div>
+            <span class="divider-vertical divider-light d-md-block d-none"></span>
+            <div class="d-flex flex-lg-row flex-column align-items-lg-start align-items-center mb-md-0 mb-4 px-lg-0 px-sm-4 px-3 pb-md-0 pb-2 text-lg-start text-center">
+              <i class="ci-chat me-lg-2 mb-lg-0 mb-3 text-primary" style="font-size: 40px;"></i>
+              <div class="ps-lg-1">
+                <h5 class="mb-0 fs-sm text-light opacity-60">Fale conosco</h5>
+                <a href="mailto:{{logotipo.emailsglass}}" class="text-decoration-none text-light">{{logotipo.emailsglass}}</a>
+              </div>
+            </div>
+            <span class="divider-vertical divider-light d-md-block d-none"></span>
+            <div class="d-flex flex-lg-row flex-column align-items-lg-start align-items-center mb-md-0 mb-4 px-lg-0 px-sm-4 px-3 pb-md-0 pb-2 text-lg-start text-center">
+              <i class="ci-clock me-lg-2 mb-lg-0 mb-3 text-primary" style="font-size: 40px;"></i>
+              <div class="ps-lg-1">
+                <h5 class="mb-0 fs-sm text-light opacity-60">Horário de trabalho</h5>
+                <span class="d-block text-light">Seg a sex: 9h-am às 18h-pm<br> Sáb: dias de folga</span>
+              </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+        <!-- Parallax bg -->
+        <div class="jarallax-img bg-repeat-0 bg-dark opacity-50" style="background-image: url(/static/assets/img/seo-agency/contacts/page-title-bg.jpg);"></div>
+      </section>
+      <!-- Page content -->
+      <!-- Contact -->
+      <section class="container py-lg-6 py-5">
+        <h2 class="h1 pb-3">Pronto para começar?</h2>
+        <div class="row justify-content-center pb-md-5">
+          <div class="col-md-5 offset-lg-1 col-sm-9 order-md-2 order-1 mb-md-0 mb-4">
+            <div class="parallax mx-auto">
+              <div class="parallax-layer" data-depth="0.05">
+                <img src="/static/assets/img/seo-agency/contacts/illustration/01.png" alt="Layer-1">
+              </div>
+
+              <div class="parallax-layer" data-depth="0.1">
+                <img src="/static/assets/img/seo-agency/contacts/illustration/02.svg" alt="Layer-2">
+              </div>
+
+              <div class="parallax-layer" data-depth="0.13">
+                <img src="/static/assets/img/seo-agency/contacts/illustration/03.svg" alt="Layer-3">
+              </div>
+
+              <div class="parallax-layer" data-depth="0.16">
+                <img src="/static/assets/img/seo-agency/contacts/illustration/04.svg" alt="Layer-4">
+              </div>
+
+              <div class="parallax-layer" data-depth="0.19">
+                <img src="/static/assets/img/seo-agency/contacts/illustration/05.svg" alt="Layer-5">
+              </div>
+
+              <div class="parallax-layer" data-depth="0.22">
+                <img src="/static/assets/img/seo-agency/contacts/illustration/06.svg" alt="Layer-6">
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock content %}

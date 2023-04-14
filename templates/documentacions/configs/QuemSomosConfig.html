@@ -1,0 +1,62 @@
+{% extends "/documentacions/homebase.html" %}
+{% block content %}
+
+            <!-- Product card: Basic example-->
+            <!-- Page title-->
+            <div class="border-bottom pt-5 mt-2 mb-5">
+              <h1 class="mt-2 mt-md-4 mb-3 pt-5"></h1>
+              <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+                <p class="text-muted"></p>
+                <div class="ps-md-4 mb-3">
+                <span class="badge bg-success"></span>
+              </div>
+            </div>
+          </div>
+<!--==========END NAVBAR ==============-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="text-center bg-info p-2 h4">News Cursos</div>
+                {% include '_messages.html' %}
+                {% from "_formhelpers.html" import render_field %}
+
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-4">
+                        {{ render_field(form.nametitle, class="form-control", placeholder="Nome da Glass Mirror", style="height: 1%;" ) }}
+                        <div class="container">
+                            <div class="row">
+                                {% if getlogotipos %}
+                                <div class="col-md-4"> <input type="file" name="image_1" id="image_1">
+                                    <a href="{{url_for('static',filename='assets/img/ecommerce/shop' + getlogotipos.image_1logo)}}"> assets/img/ecommerce/shop/{{ getlogotipos.image_1logo}}</a>
+                                    <a href="{{url_for('static',filename='assets/img/ecommerce/shop' + getlogotipos.image_2logo)}}"> assets/img/ecommerce/shop/{{ getlogotipos.image_2logo}}</a>
+                                    <a href="{{url_for('static',filename='assets/img/ecommerce/shop' + getlogotipos.image_3logo)}}"> assets/img/ecommerce/shop/{{ getlogotipos.image_3logo}}</a>
+                                </div>
+                                {% else %}
+                                <div class="col-md-4">{{ render_field(form.image_1logo, class="form-control") }}</div>
+                                <div class="col-md-4">{{ render_field(form.image_2logo, class="form-control") }}</div>
+                                <div class="col-md-4">{{ render_field(form.image_3logo, class="form-control") }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {{ render_field(form.contactosglass, class="form-control", placeholder="contactos apoio", style="height: 1%;" ) }}
+                        {{ render_field(form.contactosglass2, class="form-control", placeholder="contactos comercial", style="height: 1%;" ) }}
+                        {{ render_field(form.contactosglass3, class="form-control", placeholder="contactos informacao", style="height: 1%;" ) }}
+                        {{ render_field(form.emailsglass, class="form-control", placeholder="Email apoio", style="height: 1%;" ) }}
+                        {{ render_field(form.emailsglass2, class="form-control", placeholder="Email comercial", style="height: 1%;" ) }}
+                        {{ render_field(form.emailsglass3, class="form-control", placeholder="Email informacao", style="height: 1%;" ) }}
+                        {{ render_field(form.descriptionsglass, class="form-control", placeholder="Descricoes", style="height: 1%;" ) }}
+                        {{ render_field(form.termosecondicoes, class="form-control", placeholder="termos Condicoea", style="height: 1%;" ) }}
+                        {{ render_field(form.politicasglass, class="form-control", placeholder="Politicas", style="height: 1%;" ) }}
+                        {{ render_field(form.sobresglass, class="form-control", placeholder="Sobre Nos", style="height: 1%;" ) }}
+                        {{ render_field(form.quemesomosglass, class="form-control", placeholder="Quem Somos", style="height: 1%;" ) }}
+
+                      </div>
+                  {{ form.submit( class="btn btn-primary btn-hover-shadow d-block w-100", style="height: 1%;"  ) }}
+                </form>
+            </div>
+      <div class="col-md-1"></div>
+    </div>
+</div>
+{% endblock content %}

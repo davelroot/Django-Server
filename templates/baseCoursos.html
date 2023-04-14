@@ -1,0 +1,388 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="GlassMirror Cloud - Multipurpose Bootstrap Template">
+    <meta name="keywords" content="Educação">
+    <meta name="author" content="GlassMirror Cloud">
+
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/img/favicon-16x16.png">
+    <link rel="manifest" href="/static/assets/img/site.webmanifest">
+    <link rel="mask-icon" color="#5bbad5" href="/static/assets/img/safari-pinned-tab.svg">
+
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="/static/assets/vendor/lightgallery.js/dist/css/lightgallery.min.css"/>
+    <link rel="stylesheet" media="screen" href="/static/assets/vendor/simplebar/dist/simplebar.min.css"/>
+    <link rel="stylesheet" media="screen" href="/static/assets/vendor/tiny-slider/dist/tiny-slider.css"/>
+    <link rel="stylesheet" media="screen" href="/static/icons/demo-files/demo.css">
+    <link rel="stylesheet" media="screen" href="/static/icons/style.css">
+
+    <!-- Vendor Styles-->
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="/static/assets/css/demo/online-courses/theme.min.css">
+
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #787a80;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #cfcfd1;
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+    </script>
+
+    <!-- Demo switcher offcanvas toggle styles -->
+    <style>
+      .demo-switcher {
+        position: fixed;
+        display: block;
+        top: 50%;
+        right: 1rem;
+        z-index: 100;
+      }
+      .demo-switcher-inner {
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid #e5e8ed;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #1e212c;
+        font-size: 1.25rem;
+        line-height: 3rem;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0px 10px 15px 0px rgba(30,33,44,0.10);
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WKV3GT5');
+    </script>
+  </head>
+
+
+  <!-- Body-->
+  <body>
+
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+    </noscript>
+
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>A Carregar...</span>
+      </div>
+    </div>
+
+    <!-- Main content-->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper position-relative">
+      {% include "modals/modaCurso/modalAluno.html" %}
+
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg navbar-light navbar-sticky navbar-floating">
+        <div class="container px-0 px-xl-3">
+          <a class="navbar-brand order-lg-1 me-lg-5 me-0 pe-lg-2" href="/">
+            <img src="{% static 'assets/img/seo-agency/logo-dark.png' %}" alt="GlassMirror" width="130">
+          </a>
+          <div class="d-flex align-items-center order-lg-3">
+            <a href="#modalcoursesingle" data-bs-toggle="modal" data-view="#modal-signin-view" class="btn-link d-lg-inline-block d-none ms-4 text-decoration-none text-nowrap">
+
+              <i class="ci-profile mt-n1 me-2 lead align-middle"></i>
+              Acessar
+            </a>
+            <button class="navbar-toggler ms-1 me-n3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse1" aria-expanded="false">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <nav class="collapse navbar-collapse order-lg-2" id="navbarCollapse1">
+            <ul class="navbar-nav me-auto text-nowrap">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'cursosAll:online_courses'%}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">Sobre Nós</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Cursos</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'cursosAll:courses' %}">Grade de Cursos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/#" data-bs-toggle="dropdown">Eventos</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'cursosAll:eventsList' %}">Lista Eventos</a></li>
+                  <li><a class="dropdown-item" href="{% url 'cursosAll:eventsGrid' %}">Calendario</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'cursosAll:contactos'%}">Contactos</a>
+              </li>
+              <li class="nav-item d-lg-none d-block">
+                <a href="index.html#modal-signin" data-bs-toggle="modal" data-view="#modal-signin-view" class="nav-link text-decoration-none">
+                  <i class="ci-profile mt-n1 me-2 lead align-middle"></i>
+                  Abrir / Acessa
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+
+{% block content %}
+
+
+{% endblock %}
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer pt-3 bg-dark">
+      <div class="container my-lg-3 py-md-5 py-4">
+        <div class="row">
+          {% for logotipo in logotipos %}
+          <div class="col-lg-3 col-md-4 col-sm-6 order-lg-1 order-1 mb-lg-0 mb-4">
+
+            <a class="d-inline-block mb-4" href="index.html">
+              <img src="/static/assets/img/seo-agency/logo-light.png" width="130" alt="Createx logo">
+            </a>
+            <p class="mb-sm-4 mb-3 pb-lg-3 fs-xs text-light opacity-60">{{ logotipo.descriptionsglass}}</p>
+            <a href="index.html#" class="btn-social mb-1 mt-md-0 mt-sm-1">
+              <i class="ci-linkedin"></i>
+            </a>
+            <a href="index.html#" class="btn-social me-1 mb-2 mt-md-0 mt-sm-1">
+              <i class="ci-facebook"></i>
+            </a>
+            <a href="index.html#" class="btn-social me-1 mb-2 mt-md-0 mt-sm-1">
+              <i class="ci-twitter"></i>
+            </a>
+            <a href="index.html#" class="btn-social me-1 mb-2 mt-md-0 mt-sm-1">
+              <i class="ci-instagram"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-2 col-sm-12 col-6 order-lg-2 order-sm-4 order-1 mb-lg-0 mb-4">
+            <h3 class="h6 mb-2 pb-1 text-uppercase text-light">COMPANHIA</h3>
+            <ul class="nav nav-light flex-lg-column flex-sm-row flex-column">
+              <li class="nav-item mb-2">
+                <a href="about.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Quem somos</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="case-studies.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Case Studies</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="blog.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Blog</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="careers.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Careers</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="contacts.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Contacts</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-sm-12 col-6 order-lg-3 order-sm-5 order-2 mb-lg-0 mb-4">
+            <h3 class="h6 mb-2 pb-1 text-uppercase text-light">Servicos</h3>
+            <ul class="nav nav-light flex-lg-column flex-sm-row flex-column">
+              <li class="nav-item mb-2">
+                <a href="services-single.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Social Media</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="services-single.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">SEO</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="services-single.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Research</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="services-single.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Content &amp; PR</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="services-single.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Paid Traffic</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-4 order-lg-4 order-sm-3 order-3 mb-md-0 mb-4">
+            <h3 class="h6 mb-2 pb-1 text-uppercase text-light">Contact us</h3>
+            <ul class="nav nav-light flex-md-column flex-sm-row flex-column">
+              <li class="nav-item mb-2">
+                <a href="tel:(405)555-0128" class="nav-link me-md-0 me-sm-4 p-0 fw-normal text-nowrap">
+                  <i class="ci-iphone me-2"></i>
+                  {{ logotipo.contactglass}}
+                </a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="mailto:hello@example.com" class="nav-link me-md-0 me-sm-4 p-0 fw-normal text-nowrap">
+                  <i class="ci-chat me-2"></i>
+                  {{ logotipo.emailsglass}}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 order-lg-5 order-sm-2 order-4 mb-sm-0 mb-4">
+            <h3 class="h6 mb-2 pb-1 text-uppercase text-light">Sign up to our newsletter</h3>
+            <form>
+              <div class="input-group input-group-light mb-2 pb-1">
+                <input class="form-control pe-5 rounded" type="text" placeholder="Email address*" required>
+                <button class="btn btn-link bt-sm position-absolute top-50 end-0 translate-middle-y me-3 px-0" type="submit">
+                  <i class="ci-arrow-right lead text-white mt-n1"></i>
+                </button>
+              </div>
+              <small class="d-block form-text fs-xxs text-light">*Subscribe to our newsletter to receive early discount offers, updates and new products info.</small>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <hr class="hr-gradient hr-light">
+
+      <div style="background-color: #292C37;">
+        <div class="container py-2">
+          <div class="d-flex align-items-sm-center justify-content-between py-1">
+            <div class="fs-xs text-light">
+              <span class="d-sm-inline d-block mb-1">
+                <span class="fs-sm">&copy; </span>
+                © Todos os direitos reservados.
+              </span>
+              Feito com por
+              <i class="ci-heart mt-n1 mx-1 fs-base text-primary align-middle"></i>
+              <a href="https://createx.studio/" class="text-light" target="_blank" rel="noopener noreferrer">by GlassMirror</a>
+            </div>
+            <div class="d-flex align-items-sm-center">
+              <span class="d-sm-inline-block d-none text-light fs-sm me-3 mb-1 align-vertical">Top</span>
+              <a class="btn-scroll-top position-static rounded" href="index.html#top" data-scroll>
+                <i class="btn-scroll-top-icon ci-angle-up"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </footer>
+
+
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="/static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="/static/assets/vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+    <script src="/static/assets/vendor/lg-video.js/dist/lg-video.min.js"></script>
+    <script src="/static/assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="/static/assets/vendor/parallax-js/dist/parallax.min.js"></script>
+    <script src="/static/assets/vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="/static/assets/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="/static/assets/vendor/progressbar.js/dist/progressbar.min.js"></script>
+
+    <!-- Main theme script-->
+    <script src="/static/assets/js/theme.min.js"></script>
+    <script type="text/javascript" src="static/index.js"></script>
+  </body>
+</html>

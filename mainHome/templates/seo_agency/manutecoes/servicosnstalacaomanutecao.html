@@ -1,0 +1,221 @@
+{% extends "base.html" %} {% block title %}Instalaçao e Manuteção{% endblock %}
+
+{% block content %}
+      <!-- Page title-->
+      <section class="py-md-6 py-5 bg-dark jarallax" data-jarallax data-speed="0.6">
+        <div class="container mt-5 py-lg-4">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-alt breadcrumb-light justify-content-center mb-sm-4">
+              <li class="breadcrumb-item">
+                <a href="index">
+                  <i class="ci-home"></i>
+                </a>
+              </li>
+              <li class="breadcrumb-item"></li>
+                <a href="">Instalaçao e Manuteção</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Instalaçao e Manuteção</li>
+            </ol>
+          </nav>
+          <h5 class="display-1 text-center text-light">Serviços Instalaçao e Manuteção COM ESPECIALISTAS</h5>
+          <p class="mx-auto mb-lg-6 mb-sm-5 pb-3 lead text-center text-light opacity-60" style="max-width: 810px;">Sempre disponível, Suporte 24/24 .</p>
+          <div class="d-flex flex-md-row flex-column justify-content-center">
+            {% for logotipo in logotipos %}
+            <div class="d-flex flex-md-row flex-column align-items-center mb-md-0 mb-4 px-md-0 px-sm-5 px-4 pb-md-0 pb-2 text-md-start text-center">
+              <i class="ci-chat me-md-2 mb-md-0 mb-3 text-primary" style="font-size: 40px;"></i>
+              <div class="ps-md-1">
+                <h6 class="mb-0 fs-sm text-light opacity-60">Fale conosco.</h6>
+                <a href="mailto:{{logotipo.emailsglass}}" class="fs-lg text-decoration-none text-light">{{logotipo.emailsglass}}</a>
+              </div>
+            </div>
+            <span class="divider-vertical divider-light d-md-block d-none mx-5"></span>
+            <div class="d-flex flex-md-row flex-column align-items-center mb-md-0 mb-4 px-md-0 px-sm-5 px-4 pb-md-0 pb-2 text-md-start text-center">
+              <i class="ci-iphone me-md-2 mb-md-0 mb-3 text-primary" style="font-size: 40px;"></i>
+              <div class="ps-md-1">
+                <h6 class="mb-0 fs-sm text-light opacity-60">Ligue para nós.</h6>
+                <a href="tel:(+244){{logotipo.contactglass}}" class="fs-lg text-decoration-none text-light">{{logotipo.contactglass}}</a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>          
+        </div>
+
+        <!-- Parallax bg -->
+        <div class="jarallax-img bg-repeat-0 bg-dark opacity-50" style="background-image: url(/static/assets/img/seo-agency/about/careers/page-title-bg.jpg);"></div>
+      </section>
+        <!-- FIm Parallax bg -->
+
+      <!-- Portfolio grid-->
+      <section class="py-lg-6 py-5 bg-secondary bg-position-top-start bg-repeat-0" style="background-image: url(../assets/img/creative-agency/portfolio/page-bg.png);">
+        <div class="container mt-5 py-3 pb-lg-0 pt-md-5 pt-lg-4">
+
+          <!-- Filterable grid container. IMPORTANT: it should wrap filters/sorters and target grid of items in order for plugin to work! -->
+          <div data-filter-grid>
+            <h3 class="h6 mb-2 text-uppercase">Nosso</h3>
+            <div class="row align-items-end mb-lg-5 mb-4">
+              <div class="col-lg">
+                <h2 class="h1 mb-lg-0 mb-md-3 mb-2">Portfolio</h2>
+              </div>
+              <div class="col-lg-9">
+                <div class="mb-lg-0 mb-4 pb-lg-0 pb-2" data-simplebar data-simplebar-auto-hide="false">
+
+
+                  <!-- Filter navs -->
+                  <ul class="nav flex-lg-wrap flex-nowrap justify-content-lg-end mx-lg-0 mx-n3 mt-1 text-nowrap">
+                    <li class="nav-item mb-0">
+                      <span class="nav-link active" data-filter="all">
+                        Todos
+                        <sup class="ms-1">12</sup>
+                      </span>
+                    </li>
+                    <li class="nav-item mb-0">
+                      <span class="nav-link" data-filter=".mobile-apps">
+                        NetWorking
+                        <sup class="ms-1">2</sup>
+                      </span>
+                    </li>
+                    <li class="nav-item mb-0">
+                      <span class="nav-link" data-filter=".web-design">
+                        Segurança Electronica
+                        <sup class="ms-1">4</sup>
+                      </span>
+                    </li>
+
+                    <li class="nav-item mb-0">
+                      <span class="nav-link" data-filter=".branding">
+                      Impressoras
+                        <sup class="ms-1">5</sup>
+                      </span>
+                    </li>
+
+                    <li class="nav-item mb-0">
+                      <span class="nav-link" data-filter=".glassmirror">
+                        Cisco suporte
+                        <sup class="ms-1">5</sup>
+                      </span>
+                    </li>
+                    <li class="nav-item mb-0">
+                      <span class="nav-link" data-filter=".video-production">
+                        Electrecistas 
+                        <sup class="ms-1">1</sup>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Filterable grid of items -->
+            <div class="row">
+
+            <div class="grid-item glassmirror col-md-8 pb-lg-2 mb-4">
+                <a class="portfolio-card-scale" href="portfolio-single-v1.html">
+                  <div class="portfolio-card-img">
+                    <img src="../images/" alt="Card image">
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">Redes</h3>
+                    <span class="fs-sm text-muted">Branding</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item branding col-md-8 pb-lg-2 mb-4">
+                <a class="portfolio-card-scale" href="portfolio-single-v1.html">
+                  <div class="portfolio-card-img">
+                    <img src="../images/" alt="Card image">
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">Abstract Modern Graphic 3D Render</h3>
+                    <span class="fs-sm text-muted">Branding</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item video-production col-md-4 col-sm-6 pb-lg-2 mb-4">
+                <a class="portfolio-card-scale portfolio-card-video" href="portfolio-single-v2.html">
+                  <div class="portfolio-card-img">
+                    <img src="../images/" alt="Card image">
+                    <span class="btn-video"></span>
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">Abstract Shape Design</h3>
+                    <span class="fs-sm text-muted">Video Production</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item web-design col-md-4 col-sm-6 pb-lg-2 mb-4">
+                <a class="portfolio-card-scale" href="portfolio-single-v1.html">
+                  <div class="portfolio-card-img">
+                    <img src="/static/images/" alt="Card image">
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">Pink Fur Light Bulb Creative Concept</h3>
+                    <span class="fs-sm text-muted">Web Design</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item mobile-apps col-md-4 col-sm-6 pb-lg-2 mb-4">
+                <a class="portfolio-card-scale" href="portfolio-single-v2.html">
+                  <div class="portfolio-card-img">
+                    <img src="/static/images/klipart11.png" alt="Card image">
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">Minimalistic Mobile Interface</h3>
+                    <span class="fs-sm text-muted">Mobile Apps</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item branding col-md-4 col-sm-6 pb-lg-2 mb-4">
+                <a class="portfolio-card-scale" href="portfolio-single-v1.html">
+                  <div class="portfolio-card-img">
+                    <img src="/static/images/klipartz.png" alt="Card image">
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">Hardcover Book Concept</h3>
+                    <span class="fs-sm text-muted">Branding</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item branding col-md-8 pb-lg-2 mb-4">
+                <a class="portfolio-card-scale" href="portfolio-single-v2.html">
+                  <div class="portfolio-card-img">
+                    <img src="/static/images/klipartz12.png" alt="Card image">
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">Striped Smooth Surface With Lines</h3>
+                    <span class="fs-sm text-muted">Branding</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item web-design col-md-4 col-sm-6 pb-lg-2 mb-4">
+                <a class="portfolio-card-scale" href="portfolio-single-v1.html">
+                  <div class="portfolio-card-img">
+                    <img src="/static/images/klipartz13.png" alt="Card image">
+                  </div>
+                  <div class="portfolio-card-body">
+                    <h3 class="portfolio-card-title">Artificial Intelligence Concept</h3>
+                    <span class="fs-sm text-muted">Web Design</span>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <div class="mt-lg-4 text-center">
+            <button class="btn btn-lg btn-link load-more-btn p-0 text-decoration-none" type="button">
+              <i class="ci-arrow-convert mt-n1 me-3 align-middle"></i>
+              Ver Mais
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+
+{% endblock %}

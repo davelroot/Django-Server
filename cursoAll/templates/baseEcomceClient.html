@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Baza Rapido - Multipurpose">
+    <meta name="keywords" content="So  Venda de todo artigos ">
+    <meta name="author" content="Createx Studio">
+
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/img/favicon-16x16.png">
+    <link rel="manifest" href="/static/assets/img/site.webmanifest">
+    <link rel="mask-icon" color="#5bbad5" href="/static/assets/img/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="/static/assets/vendor/tiny-slider/dist/tiny-slider.css"/>
+
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="/static/assets/css/demo/ecommerce/theme.min.css">
+
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #787a80;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #cfcfd1;
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+    </script>
+
+    <!-- Demo switcher offcanvas toggle styles -->
+    <style>
+      .demo-switcher {
+        position: fixed;
+        display: block;
+        top: 50%;
+        right: 1rem;
+        z-index: 100;
+      }
+      .demo-switcher-inner {
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid #e5e8ed;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #1e212c;
+        font-size: 1.25rem;
+        line-height: 3rem;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0px 10px 15px 0px rgba(30,33,44,0.10);
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WKV3GT5');
+    </script>
+  </head>
+
+
+  <!-- Body-->
+  <body>
+
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+    </noscript>
+
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>A Carregar...</span>
+      </div>
+    </div>
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+      <!-- Demo switcher offcanvas toggle -->
+      <!-- Shopping cart offcanvas -->
+         {% include"modals/modaLoja/modalogin.html" %}
+      <div id="cart" class="offcanvas offcanvas-end">
+        <!-- Header -->
+
+        <div class="offcanvas-header align-items-center border-bottom">
+          <h2 class="h5 mb-0">Teu Carinho (17)</h2>
+          <button class="btn-close me-n1" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        {% for logotipo in logotipos %}
+        <!-- Body -->
+        <div class="offcanvas-body">
+          <!-- Item -->
+          <div class="d-flex align-items-start p-4 border-bottom mx-n4">
+            <a href="shop-single.html" style="min-width: 80px;">
+              <img src="/static/assets/img/ecommerce/cart/01.png" width="80" alt="Product thumb">
+            </a>
+            <div class="w-100 ps-3">
+              <div class="d-flex justify-content-between">
+                <div class="w-100 pe-2">
+                  <h3 class="fs-sm mb-3">
+                    <a href="shop-single.html" class="nav-link fw-bold">Basic hooded sweatshirt in pink</a>
+                  </h3>
+                  <ul class="list-unstyled fs-xs mt-n2 mb-2">
+                    <li class="mb-0"><span class="text-muted">Color:</span> Pink</li>
+                    <li class="mb-0"><span class="text-muted">Size:</span> S</li>
+                  </ul>
+                  <div class="d-flex align-items-center">
+                    <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                    <div class="text-nowrap"><strong class="text-danger">$15.00</strong> <s class="fs-xs text-muted">$31.00</s></div>
+                  </div>
+                  <button class="btn btn-link btn-sm text-decoration-none px-0 pb-0">
+                    Move to
+                    <i class="ci-heart ms-1"></i>
+                  </button>
+                </div>
+                <div class="nav-muted me-n2">
+                  <a href="index.html#" class="nav-link px-2 mt-n2" data-bs-toggle="tooltip" title="Remove"><i class="ci-delete"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item -->
+          <div class="d-flex align-items-start p-4 border-bottom mx-n4">
+            <a href="shop-single.html" style="min-width: 80px;">
+              <img src="/static/assets/img/ecommerce/cart/02.png" width="80" alt="Product thumb">
+            </a>
+            <div class="w-100 ps-3">
+              <div class="d-flex justify-content-between">
+                <div class="w-100 pe-2">
+                  <h3 class="fs-sm mb-3">
+                    <a href="shop-single.html" class="nav-link fw-bold">Black and white sport cap</a>
+                  </h3>
+                  <div class="d-flex align-items-center">
+                    <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                    <div class="text-nowrap"><strong>$18.15</strong></div>
+                  </div>
+                  <button class="btn btn-link btn-sm text-decoration-none px-0 pb-0">
+                    Move to
+                    <i class="ci-heart ms-1"></i>
+                  </button>
+                </div>
+                <div class="nav-muted me-n2">
+                  <a href="index.html#" class="nav-link px-2 mt-n2" data-bs-toggle="tooltip" title="Remove"><i class="ci-delete"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item -->
+          <div class="d-flex align-items-start p-4 border-bottom mx-n4">
+            <a href="shop-single.html" style="min-width: 80px;">
+              <img src="/static/assets/img/ecommerce/cart/03.png" width="80" alt="Product thumb">
+            </a>
+            <div class="w-100 ps-3">
+              <div class="d-flex justify-content-between">
+                <div class="w-100 pe-2">
+                  <h3 class="fs-sm mb-3">
+                    <a href="shop-single.html" class="nav-link fw-bold">Mid-rise slim cropped fit jeans</a>
+                  </h3>
+                  <ul class="list-unstyled fs-xs mt-n2 mb-2">
+                    <li class="mb-0"><span class="text-muted">Size:</span> M</li>
+                  </ul>
+                  <div class="d-flex align-items-center">
+                    <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                    <div class="text-nowrap"><strong>$76.00</strong></div>
+                  </div>
+                  <button class="btn btn-link btn-sm text-decoration-none px-0 pb-0">
+                    Move to
+                    <i class="ci-heart ms-1"></i>
+                  </button>
+                </div>
+                <div class="nav-muted me-n2">
+                  <a href="index.html#" class="nav-link px-2 mt-n2" data-bs-toggle="tooltip" title="Remove"><i class="ci-delete"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item -->
+          <div class="d-flex align-items-start p-4 mx-n4">
+            <a href="shop-single.html" style="min-width: 80px;">
+              <img src="/static/assets/img/ecommerce/cart/04.png" width="80" alt="Product thumb">
+            </a>
+            <div class="w-100 ps-3">
+              <div class="d-flex justify-content-between">
+                <div class="w-100 pe-2">
+                  <h3 class="fs-sm mb-3">
+                    <a href="shop-single.html" class="nav-link fw-bold">Men fashion gray shoes</a>
+                  </h3>
+                  <ul class="list-unstyled fs-xs mt-n2 mb-2">
+                    <li class="mb-0"><span class="text-muted">Color:</span> Gray</li>
+                    <li class="mb-0"><span class="text-muted">Size:</span> 10.5</li>
+                  </ul>
+                  <div class="d-flex align-items-center">
+                    <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                    <div class="text-nowrap"><strong>$84.00</strong></div>
+                  </div>
+                  <button class="btn btn-link btn-sm text-decoration-none px-0 pb-0">
+                    Move to
+                    <i class="ci-heart ms-1"></i>
+                  </button>
+                </div>
+                <div class="nav-muted me-n2">
+                  <a href="index.html#" class="nav-link px-2 mt-n2" data-bs-toggle="tooltip" title="Remove"><i class="ci-delete"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="offcanvas-footer flex-column border-top">
+          <div class="d-flex align-items-center justify-content-between mb-3 pb-1">
+            <span class="text-muted me-2">Subtotal:</span>
+            <span class="h5 mb-0">$198.65</span>
+          </div>
+          <a href="checkout.html" class="btn btn-primary btn-lg d-block w-100">
+            <i class="ci-credit-card fs-lg mt-n1 me-1"></i>
+            Checkout
+          </a>
+        </div>
+      </div>
+            <!-- Promo bar -->
+            <section class="tns-promo-bar bg-primary py-2">
+              <div class="container d-flex justify-content-center">
+                <div class="tns-carousel-wrapper tns-controls-inverse">
+                  <div class="tns-carousel-inner" data-carousel-options = '{"mode": "gallery", "nav": false}'>
+                    <div class="fs-xs text-light px-2">
+                      <strong class="me-1">Up to 70% Off.</strong>
+                      <a href="account-profile.html#" class="text-light">Shop our latest sale offers</a>
+                    </div>
+                    <div class="fs-xs text-light px-2">
+                      <strong class="me-1">Money back guarantee.</strong>
+                      <a href="account-profile.html#" class="text-light">Learn more</a>
+                    </div>
+                    <div class="fs-xs text-light px-2">
+                      <strong class="me-1">Friendly customer support.</strong>
+                      <a href="account-profile.html#" class="text-light">Contact 24/7</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+            <!-- Breadcrumb -->
+            <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+              <div class="container">
+                <ol class="breadcrumb breadcrumb-alt mb-0">
+                  <li class="breadcrumb-item">
+                    <a href="#"><i class="ci-home"></i></a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="#">Account</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">Meu perfil</li>
+                </ol>
+              </div>
+            </nav>
+
+
+            <!-- Page container -->
+            <section class="container pt-3 pt-lg-4 pb-5 pb-lg-6">
+              <div class="row pb-2 pb-lg-0">
+
+                <!-- Account menu (sticky sidebar) -->
+                <aside class="col-xl-3 col-lg-4 pb-3 mb-4 mb-lg-0">
+                  <div class="sidebar-sticky" data-sidebar-sticky-options='{
+                    "topSpacing": 120,
+                    "minWidth": 991
+                  }'>
+                    <div class="sidebar-sticky-inner">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title mb-1">Annette Black</h5>
+                          <p class="card-text text-muted mb-lg-0">ann.black@example.com</p>
+                          <a href="accountprofile#accountmenu" class="btn btn-primary d-block w-100 d-lg-none" data-bs-toggle="collapse">Menu</a>
+                        </div>
+                        <div id="account-menu" class="collapse d-lg-block">
+                          <div class="list-group list-group-flush border-top">
+                            <a href="accountprofile" class="list-group-item list-group-item-action d-flex align-items-center active">
+                              <i class="ci-profile fs-lg me-2"></i>
+                              <span>Meu perfil</span>
+                            </a>
+                            <a href="accountorders" class="list-group-item list-group-item-action d-flex align-items-center">
+                              <i class="ci-bag fs-lg me-2"></i>
+                              <span>Minhas Ordens</span>
+                            </a>
+                            <a href="accountwishlist" class="list-group-item list-group-item-action d-flex align-items-center">
+                              <i class="ci-heart fs-lg me-2"></i>
+                              <span>Lista de desejos</span>
+                              <span class="badge bg-warning ms-auto">2</span>
+                            </a>
+                            <a href="accountrecentlyviewed" class="list-group-item list-group-item-action d-flex align-items-center">
+                              <i class="ci-eye fs-lg me-2"></i>
+                              <span>Recentemente visto</span>
+                            </a>
+                            <a href="accountreviews" class="list-group-item list-group-item-action d-flex align-items-center">
+                              <i class="ci-star fs-lg me-2"></i>
+                              <span>Meu comentario</span>
+                            </a>
+                            <a href="accountprofile#" class="list-group-item list-group-item-action d-flex align-items-center">
+                              <i class="ci-logout fs-lg me-2"></i>
+                              <span>Sair</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </aside>
+                {% block content %}
+
+
+                {% endblock %}
+
+              </div>
+            </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer pt-sm-5 pt-4 bg-dark">
+      <div class="container pt-3">
+        <div class="row pb-sm-2">
+          <div class="col-6 col-sm-3 col-lg-2 mb-4">
+            <h3 class="h6 mb-2 pb-1 text-uppercase text-light">Ajuda</h3>
+            <ul class="nav nav-light flex-column">
+              <li class="nav-item mb-2">
+                <a href="index.html#" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Entrega e devolução</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="contacts.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">PERGUNTAS FREQÜENTES</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="order-tracking.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Ordem de trilha</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="contacts.html" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Contatos</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-3 col-lg-2 col-xl-3 mb-4">
+            <h3 class="h6 mb-2 pb-1 text-uppercase text-light ps-xl-6">Loja</h3>
+            <ul class="nav nav-light flex-column ps-xl-6">
+              <li class="nav-item mb-2">
+                <a href="index.html#" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Recém-chegados</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="index.html#" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Recém-chegados</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="index.html#" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Vendas</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="index.html#" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Marcas</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-lg-3 pb-2 pb-lg-0 mb-4">
+
+            <h3 class="h6 mb-2 pb-1 text-uppercase text-light">ENTRE EM CONTATO</h3>
+            <ul class="nav nav-light flex-column pb-3">
+              <li class="nav-item text-nowrap mb-2">
+                <span class="text-light me-1">Chamar:</span>
+                <a href="tel:{{logotipo.contacglass}}" class="nav-link d-inline-block me-lg-0 me-sm-4 p-0 fw-normal">{{ logotipo.contactglass }}</a>
+              </li>
+              <li class="nav-item text-nowrap mb-2">
+                <span class="text-light me-1">Email:</span>
+                <a href="mailto:{{logotipo.emailglass}}" class="nav-link d-inline-block me-lg-0 me-sm-4 p-0 fw-normal">{{ logotipo.emailsglass2 }}</a>
+              </li>
+            </ul>
+            <a href="/#" class="btn-social bs-solid bs-light me-2">
+              <i class="ci-facebook"></i>
+            </a>
+            <a href="/#" class="btn-social bs-solid bs-light me-2">
+              <i class="ci-instagram"></i>
+            </a>
+            <a href="/#" class="btn-social bs-solid bs-light me-2">
+              <i class="ci-twitter"></i>
+            </a>
+            <a href="/#" class="btn-social bs-solid bs-light me-2">
+              <i class="ci-youtube"></i>
+            </a>
+            <a href="/#" class="btn-social bs-solid bs-light">
+              <i class="ci-pinterest"></i>
+            </a>
+          </div>
+          <div class="col-lg-4 col-xl-3 mb-4">
+            <h3 class="h6 mb-3 pb-1 text-uppercase text-light">BAIXE NOSSO APLICATIVO</h3>
+            <div class="d-flex flex-wrap flex-sm-nowrap">
+              <a href="index.html#" class="btn-market btn-apple mb-3 me-3" role="button">
+                <span class="btn-market-subtitle">Baixe no</span>
+                <span class="btn-market-title">App Store</span>
+              </a>
+              <a href="/#" class="btn-market btn-google mb-3" role="button">
+                <span class="btn-market-subtitle">Baixe no</span>
+                <span class="btn-market-title">Google Play</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="border-top border-light">
+        <div class="container py-4">
+          <div class="fs-xs text-light">
+            <span class="fs-sm">&copy; </span>
+            Todos os direitos reservados. Feito com por
+            <i class="ci-heart mt-n1 mx-1 fs-base text-primary align-middle"></i>
+            <a href="https://glassmirror.ao/" class="text-light" target="_blank" rel="noopener noreferrer">NARCIDI</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Back to top button-->
+    <a class="btn-scroll-top" href="index.html#top" data-scroll data-fixed-element>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon ci-angle-up"></i>
+    </a>
+
+
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="/static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="/static/assets/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+
+    <!-- Main theme script-->
+    <script src="/static/assets/js/theme.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js')}}"></script>
+  </body>
+</html>

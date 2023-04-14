@@ -1,0 +1,75 @@
+{% extends "/documentacions/homebase.html" %}
+{% block content %}
+{% include '_messages.html' %}
+
+{% if formadores %}
+            <!-- Product card: Basic example-->
+            <!-- Page title-->
+            <div class="border-bottom pt-5 mt-2 mb-5">
+              <h1 class="mt-2 mt-md-4 mb-3 pt-5"></h1>
+              <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+                <p class="text-muted"></p>
+                <div class="ps-md-4 mb-3">
+                <span class="badge bg-success"></span>
+              </div>
+            </div>
+          </div>
+<!--==========END NAVBAR ==============-->
+<section class="pb-5 mb-md-2" id="product-card">
+  <h2 class="h3">{% if updateperiodos %} Update {% else %}Add a {% endif %} Turno</h2>
+  <div class="card shadow-sm">
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+            <div class="col-md-6">
+
+                <div class="text-center  p-2 h3 mb-3"></div>
+                <form method=post>
+                <div>
+                 <form action="" method="post">
+                     {% if updateperiodos %}
+                     <input type="text" name="periodos" class="form-control" value="{{updateperiodos.name}}">
+                     <input type="submit" value="update periodos" class="btn btn-info mt-3">
+                     {% else %}
+                     <input type="text" name="periodos" class="form-control">
+                     <input type="submit" value="Add o Turno" class="btn btn-info mt-3" style="height: 1%">
+                     {% endif %}
+
+                 </form>
+                </div>
+                </form>
+                {% else %}
+            <!-- Product card: Basic example-->
+            <!-- Page title-->
+            <div class="border-bottom pt-5 mt-2 mb-5">
+              <h1 class="mt-2 mt-md-4 mb-3 pt-5"></h1>
+              <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+                <p class="text-muted"></p>
+                <div class="ps-md-4 mb-3">
+                <span class="badge bg-success"></span>
+              </div>
+            </div>
+          </div>
+                <div class="text-center  p-2 h3 mb-3">{% if updateformadores %}Upade {% else %}Add {% endif %}Formador</div>
+                <form method=post>
+                <div>
+                 <form action="" method="post">
+                     {% if updateformadores %}
+                     <input type="text" name="formadores" class="form-control" value="{{updateformadores.name}}">
+                     <input type="submit" value="Update formadores" class="btn btn-info mt-3">
+                     {% else %}
+                     <input type="text" name="formadores" class="form-control">
+                     <input type="submit" value="Add o formadores" class="btn btn-info mt-3"  style="height: 1%">
+                     {% endif %}
+
+                 </form>
+                </div>
+                </form>
+                {% endif %}
+            </div>
+      <div class="col-md-3"></div>
+    </div>
+</div>
+</div>
+</section>>
+{% endblock content %}

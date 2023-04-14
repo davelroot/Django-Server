@@ -1,0 +1,607 @@
+{% extends "baseCoursos.html" %} {% block title %}Centro Profissional &amp; Escola de Conducao GlassMirror Tecnologias{% endblock %}
+{% block content %}
+
+
+      <!-- Page content-->
+      <!-- Hero-->
+      <section class="d-flex min-vh-100 mb-lg-6 mb-5 pt-lg-6 pt-5 jarallax" data-jarallax data-speed="0.8" style="background-color: #f9dcd4;">
+        <div class="container d-flex flex-column justify-content-between">
+          <div class="row align-items-center h-100">
+            <div class="col-xl-5 col-md-6 order-md-1 order-2 me-xl-auto text-md-start text-center">
+              <h1 class="display-2 mb-md-5 mb-3 pb-3">Aproveite para estudar com o GlassMirror os Melhores Cursos</h1>
+            </div>
+            <div class="col-md-6 col-sm-10 order-md-2 order-1 mx-md-0 mx-auto mb-md-0 mb-5">
+              <img src="/static/assets/img/online-courses/home/hero/illustration.svg" alt="Illustration">
+            </div>
+          </div>
+          <div class="mb-md-5 py-4">
+            <ul class="d-md-flex d-none align-items-center justify-content-between flex-md-nowrap flex-wrap list-unstyled">
+              <li class="d-flex flex-lg-row flex-column align-items-center mb-md-0 mb-4 text-dark text-nowrap">
+                <span class="h1 mb-lg-0 mb-1 me-lg-2">1200</span>
+                Estudantes formados
+              </li>
+              <li class="d-md-block d-none fs-sm text-primary">&bull;</li>
+              <li class="d-flex flex-lg-row flex-column align-items-center mb-md-0 mb-4 text-dark text-nowrap">
+                <span class="h1 mb-lg-0 mb-1 me-lg-2">84</span>
+                Cursos concluídos
+              </li>
+              <li class="d-md-block d-none fs-sm text-primary">&bull;</li>
+              <li class="d-flex flex-lg-row flex-column align-items-center mb-md-0 mb-4 text-dark text-nowrap">
+                <span class="h1 mb-lg-0 mb-1 me-lg-2">16</span>
+                Tutores qualificados
+              </li>
+              <li class="d-md-block d-none fs-sm text-primary">&bull;</li>
+              <li class="d-flex flex-lg-row flex-column align-items-center mb-md-0 mb-4 text-dark text-nowrap">
+                <span class="h1 mb-lg-0 mb-1 me-lg-2">5</span>
+                Anos de experiência
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="jarallax-img" style="background-image: url(/static/assets/img/online-courses/home/hero/bg.png);"></div>
+      </section>
+
+
+      <!-- About -->
+      <section class="pt-lg-5 pt-4 pb-lg-6 pb-5 bg-repeat-0 bg-position-center bg-size-contain" style="background-image: url(../assets/img/online-courses/home/shapes/01-about.svg);">
+        <div class="container">
+          <div class="container py-4">
+            <h3 class="h6 mb-2 text-uppercase text-sm-center">QUEM SOMOS?</h3>
+            <h2 class="h1 mb-lg-5 pb-md-2 text-sm-center">Centro Profissional &amp; Escola de Conducao GlassMirror Tecnologias</h2>
+          </div>
+          <div class="row">
+            <div class="col-md-7 me-auto mb-md-0 mb-4 pb-md-0 pb-3">
+              <img src="/static/assets/img/online-courses/home/about.jpg" alt="GlassMirror Tecnologias" class="rounded">
+            </div>
+            <div class="col-lg-4 col-md-5">
+              <h3 class="h6 mb-2 text-uppercase">Objetivo?</h3>
+              <h2 class="h3 mb-4 pb-lg-3">Nossa Missao</h2>
+              <ul class="list-unstyled mb-0">
+                <li class="d-flex mb-2 pb-1">
+                  <i class="ci-check mt-1 me-3 text-primary"></i>
+                  .
+                </li>
+                <li class="d-flex mb-2 pb-1">
+                  <i class="ci-check mt-1 me-3 text-primary"></i>
+                  .
+                </li>
+                <li class="d-flex mb-2 pb-1">
+                  <i class="ci-check mt-1 me-3 text-primary"></i>
+                  .
+                </li>
+                <li class="d-flex mb-2 pb-1">
+                  <i class="ci-check mt-1 me-3 text-primary"></i>
+                  .
+                </li>
+                <li class="d-flex mb-2 pb-1">
+                  <i class="ci-check mt-1 me-3 text-primary"></i>
+                  .
+                </li>
+                <li class="d-flex mb-2 pb-1">
+                  <i class="ci-check mt-1 me-3 text-primary"></i>
+                  .
+                </li>
+              </ul>
+              <a href="aboutyou" class="btn btn-gradient btn-hover-shadow mt-lg-5 mt-4">Ler Mais</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Courses -->
+      <section class="container pt-lg-5 pt-4 pb-5">
+        <h3 class="h6 mb-2 text-uppercase">PRONTO PARA APRENDER?</h3>
+        <div class="d-flex align-items-center justify-content-between mb-lg-5 mb-4 pb-md-2">
+          <h2 class="h1 mb-0">Nossa Lista de Cursos</h2>
+          <div class="d-sm-block d-none">
+            <a href="courses.html" class="btn btn-lg btn-outline-primary btn-hover-shadow">Veja todos os Cursos</a>
+          </div>
+        </div>
+        <div class="row">
+          {% if cursos %}
+            {% for curso in cursos %}
+          <div class="col-md-6 mb-grid-gutter">
+            <a href="{{url_for('cursosAll.courseSingle',gm=curso.id)}}" class="card card-horizontal card-hover shadow heading-highlight">
+              <div class="card-img-top bg-position-center-top" style="background-image: url( {{url_for('static', filename='assets/img/ecommerce/shop/' + curso.image_curso)}} );"></div>
+              <div class="card-body">
+                <span class="badge bg-success mb-3 fs-sm">{{curso.nomecursos}}</span>
+                <h5 class="card-title mb-3 py-1">{{curso.descriptioncursos}}</h5>
+                <div class="text-muted">
+                  <span class="fw-bold text-primary">Kz{{curso.price}}</span>
+                  <span class="text-border px-1">|</span>
+                  by {{curso.formador_id}}
+                </div>
+              </div>
+            </a>
+          </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="d-sm-none d-block py-3 text-center">
+          <a href="courses.html" class="btn btn-lg btn-outline-primary">View all courses</a>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- Benefits -->
+      <section class="container pt-lg-5 pt-4 pb-lg-6 pb-5">
+        <h3 class="h6 mb-2 text-uppercase text-sm-center">BENEFÍCIOS</h3>
+        <h2 class="h1 mb-lg-5 pb-md-2 text-sm-center">É assim que fazemos.</h2>
+        <div data-simplebar data-simplebar-auto-hide="false">
+          <ul class="nav nav-tabs nav-fill flex-nowrap mb-3 text-nowrap" role="tablist">
+            <li class="nav-item">
+              <a href="index.html#experienced-tutors" class="nav-link active" id="experienced-tutors-tab" data-bs-toggle="tab" role="tab" aria-controls="experienced-tutors" aria-selected="true">
+                <i class="ci-star align-middle mt-n1 me-2"></i>
+                Tutores experientes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#feedback-support" class="nav-link" id="feedback-support-tab" data-bs-toggle="tab" role="tab" aria-controls="feedback-support" aria-selected="false">
+                <i class="ci-like align-middle mt-n1 me-2"></i>
+                Feedback &amp;  Suporte
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#online-library" class="nav-link" id="online-library-tab" data-bs-toggle="tab" role="tab" aria-controls="online-library" aria-selected="false">
+                <i class="ci-layouts align-middle mt-n1 me-2"></i>
+                Biblioteca Online 24/7
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#community" class="nav-link" id="community-tab" data-bs-toggle="tab" role="tab" aria-controls="community" aria-selected="false">
+                <i class="ci-chat align-middle mt-n1 me-2"></i>
+                Comunidade
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content mt-md-4 mt-3 pt-3">
+          <div class="tab-pane fade show active" id="experienced-tutors" role="tabpanel" aria-labelledby="experienced-tutors-tab">
+            <div class="row align-items-center">
+              <div class="col-lg-5 col-sm-6 order-sm-1 order-2 me-auto">
+                <h3 class="h2 mb-md-4 mb-3">Comunicação estudantil</h3>
+                <p class="mb-0"></p>
+              </div>
+              <div class="col-sm-6 order-sm-2 order-1 mb-sm-0 mb-4 pb-sm-0 pb-2">
+                <img src="/static/assets/img/online-courses/home/benefits/01.svg" alt="Experienced Tutors">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="feedback-support" role="tabpanel" aria-labelledby="feedback-support-tab">
+            <div class="row align-items-center">
+              <div class="col-lg-5 col-sm-6 order-sm-1 order-2 me-auto">
+                <h3 class="h2 mb-md-4 mb-3">Os materiais mais cuidadosamente selecionados</h3>
+                <p></p>
+              </div>
+              <div class="col-sm-6 order-sm-2 order-1 mb-sm-0 mb-4 pb-sm-0 pb-2">
+                <img src="/static/assets/img/online-courses/home/benefits/02.svg" alt="Feedback &amp; Support">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="online-library" role="tabpanel" aria-labelledby="online-library-tab">
+            <div class="row align-items-center">
+              <div class="col-lg-5 col-sm-6 order-sm-1 order-2 me-auto">
+                <h3 class="h2 mb-md-4 mb-3">Sempre em contato, pronto para apoiar</h3>
+                <p></p>
+              </div>
+              <div class="col-sm-6 order-sm-2 order-1 mb-sm-0 mb-4 pb-sm-0 pb-2">
+                <img src="/static/assets/img/online-courses/home/benefits/03.svg" alt="24/7 Online Library">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="community" role="tabpanel" aria-labelledby="community-tab">
+            <div class="row align-items-center">
+              <div class="col-lg-5 col-sm-6 order-sm-1 order-2 me-auto">
+                <h3 class="h2">Apenas tutores praticantes</h3>
+                <p></p>
+              </div>
+              <div class="col-sm-6 order-sm-2 order-1 mb-sm-0 mb-4 pb-sm-0 pb-2">
+                <img src="/static/assets/img/online-courses/home/benefits/04.svg" alt="Community">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Events -->
+      <section class="py-lg-5 py-4 bg-faded-primary jarallax" data-jarallax data-speed="0.8">
+        <div class="jarallax-img" style="background-image: url(/static/assets/img/online-courses/home/shapes/02-events.svg);"></div>
+        <div class="container py-4">
+          <h3 class="h6 mb-2 text-uppercase text-sm-center">EVENTOS</h3>
+          <h2 class="h1 mb-lg-5 pb-md-2 text-sm-center">Palestras &amp; workshops</h2>
+
+          <!-- Card horizontal -->
+          <div class="card card-horizontal border-0 mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">05</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-1">August</h6>
+                  <span class="text-muted">11:00 – 14:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-sm-1 mb-2">
+                <a href="event-single.html" class="nav-link">Formation of the organizational structure of the company in the face of uncertainty.</a>
+              </h3>
+              <span class="text-muted">Online master-class</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+
+          <!-- Card horizontal -->
+          <div class="card card-horizontal border-0 mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">24</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-sm-1 mb-2">July</h6>
+                  <span class="text-muted">11:00 – 12:30</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-1">
+                <a href="event-single.html" class="nav-link">Building a customer service department. Best Practices.</a>
+              </h3>
+              <span class="text-muted">Online lecture</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+
+          <!-- Card horizontal -->
+          <div class="card card-horizontal border-0 mb-4 px-sm-5 py-sm-0 py-3">
+            <div class="card-header flex-shrink-0 my-sm-4 ms-sm-n2 py-sm-2 px-sm-0 border-0">
+              <div class="d-flex">
+                <span class="display-4 mb-0 text-primary" style="font-size: 3rem;">16</span>
+                <div class="ms-3 ps-1">
+                  <h6 class="h5 mb-sm-1 mb-2">July</h6>
+                  <span class="text-muted">10:00 – 13:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body m-sm-4 py-sm-2 py-0 px-sm-3">
+              <h3 class="h5 mb-1">
+                <a href="event-single.html" class="nav-link">How to apply methods of speculative design in practice. Worldbuilding prototyping.</a>
+              </h3>
+              <span class="text-muted">Online workshop</span>
+            </div>
+            <div class="card-footer flex-shrink-0 my-sm-4 mt-5 me-sm-n2 py-sm-2 px-sm-0 border-0">
+              <a href="event-single.html" class="btn btn-outline-primary btn-hover-shadow d-sm-inline-block d-block">View more</a>
+            </div>
+          </div>
+          <h4 class="h3 pt-sm-4 pt-3 mb-0 text-center">
+            Ver mais?
+            <a href="events-list.html" class="btn btn-lg btn-gradient btn-hover-shadow d-sm-inline-block d-block mt-sm-0 mt-4 ms-sm-4">Todos os eventos</a>
+          </h4>
+        </div>
+      </section>
+
+
+      <!-- Certificate -->
+      <section class="container pt-lg-6 pt-5">
+        <div class="row pt-3 pb-4 py-lg-0">
+          <div class="col-md-5 col-sm-6 me-auto">
+            <div class="col-lg-9 px-0">
+              <h3 class="h6 mb-2 text-uppercase">CERTIFICADO GLASSMIRROR SCHOOL</h3>
+              <h2 class="h1 mb-lg-5">Sua experiência será confirmada.</h2>
+              <p>Somos credenciados por organizações profissionais e institutos internacionais:</p>
+            </div>
+            <ul class="list-unstyled d-flex flex-sm-nowrap flex-wrap">
+              <li class="mb-lg-0 mb-3 me-4 pe-3">
+                <img src="/static/assets/img/online-courses/logo/eu-business-school.svg" alt="EU Business School">
+              </li>
+              <li class="mb-lg-0 mb-3 me-4 pe-3">
+                <img src="/static/assets/img/online-courses/logo/mcgill-university.svg" alt="Mcgill University">
+              </li>
+              <li class="mb-lg-0 mb-3 me-4 pe-3">
+                <img src="/static/assets/img/online-courses/logo/incae-business-school.svg" alt="Incae Business School">
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-7 col-sm-6">
+            <img src="/static/assets/img/online-courses/courses/certificate.jpg" alt="Certificate" class="mb-md-n5 mb-sm-0 mb-n4 rounded shadow-lg position-relative" style="z-index: 5;">
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Parallax wrapper -->
+      <div class="pt-5 bg-secondary jarallax" data-jarallax data-speed="0.8">
+
+
+        <!-- Parallax image -->
+        <div class="jarallax-img" style="background-image: url(/static/assets/img/online-courses/home/shapes/03-team-testimonials.svg);"></div>
+
+
+        <!-- Team -->
+        <section class="container pt-lg-6 pt-5 pb-lg-5 pb-4">
+          <h3 class="h6 mb-2 text-uppercase">OS MELHORES FORMADORES ESTÃO TODOS AQUI.</h3>
+          <div class="mb-lg-5 mb-4 pb-md-2 d-flex justify-content-between">
+            <h2 class="h1 mb-0">Conheça o Team</h2>
+            <div class="tns-custom-controls tns-controls-inverse mb-md-n4" id="tns-team-controls" tabindex="0">
+              <button type="button" data-controls="prev" tabindex="-1">
+                <i class="ci-arrow-left"></i>
+              </button>
+              <button type="button" data-controls="next" tabindex="-1">
+                <i class="ci-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Carousel component -->
+          <div class="tns-carousel-wrapper">
+            <div class="tns-carousel-inner" data-carousel-options='{
+              "gutter": 30,
+              "nav": false,
+              "controlsContainer": "#tns-team-controls",
+              "responsive": {
+                "0": {
+                  "items": 1
+                },
+                "576": {
+                  "items": 2
+                },
+                "768": {
+                  "items": 3
+                },
+                "992": {
+                  "items": 4
+                }
+              }
+            }'>
+              <div class="card team bg-transparent">
+                <div class="card-img">
+                  <img src="/static/assets/img/online-courses/about/team/01.jpg" alt="Team member"/>
+                  <div class="card-floating-links text-end">
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-facebook"></i>
+                    </a>
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-instagram"></i>
+                    </a>
+                    <a class="btn-social bs-light" href="index.html#">
+                      <i class="ci-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body py-3 text-center">
+                  <h4 class="card-title h5 mb-1">Dianne Russell</h4>
+                  <p class="card-text text-muted">Founder and CEO</p>
+                </div>
+              </div>
+              <div class="card team bg-transparent">
+                <div class="card-img">
+                  <img src="/static/assets/img/online-courses/about/team/02.jpg" alt="Team member"/>
+                  <div class="card-floating-links text-end">
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-facebook"></i>
+                    </a>
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-instagram"></i>
+                    </a>
+                    <a class="btn-social bs-light" href="index.html#">
+                      <i class="ci-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body py-3 text-center">
+                  <h4 class="card-title h5 mb-1">Jerome Bell</h4>
+                  <p class="card-text text-muted">Founder and Program Director</p>
+                </div>
+              </div>
+              <div class="card team bg-transparent">
+                <div class="card-img">
+                  <img src="/static/assets/img/online-courses/about/team/03.jpg" alt="Team member"/>
+                  <div class="card-floating-links text-end">
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-facebook"></i>
+                    </a>
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-instagram"></i>
+                    </a>
+                    <a class="btn-social bs-light" href="index.html#">
+                      <i class="ci-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body py-3 text-center">
+                  <h4 class="card-title h5 mb-1">Kristin Watson</h4>
+                  <p class="card-text text-muted">Marketer, Curator of Marketing Course</p>
+                </div>
+              </div>
+              <div class="card team bg-transparent">
+                <div class="card-img">
+                  <img src="/static/assets/img/online-courses/about/team/04.jpg" alt="Team member"/>
+                  <div class="card-floating-links text-end">
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-facebook"></i>
+                    </a>
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-instagram"></i>
+                    </a>
+                    <a class="btn-social bs-light" href="index.html#">
+                      <i class="ci-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body py-3 text-center">
+                  <h4 class="card-title h5 mb-1">Marvin McKinney</h4>
+                  <p class="card-text text-muted">PM, Curator of Management Course</p>
+                </div>
+              </div>
+              <div class="card team bg-transparent">
+                <div class="card-img">
+                  <img src="/static/assets/img/online-courses/about/team/05.jpg" alt="Team member"/>
+                  <div class="card-floating-links text-end">
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-facebook"></i>
+                    </a>
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-instagram"></i>
+                    </a>
+                    <a class="btn-social bs-light" href="index.html#">
+                      <i class="ci-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body py-3 text-center">
+                  <h4 class="card-title h5 mb-1">Leslie Alexander Li</h4>
+                  <p class="card-text text-muted">Curator of HR & Recruting Course</p>
+                </div>
+              </div>
+              <div class="card team bg-transparent">
+                <div class="card-img">
+                  <img src="/static/assets/img/online-courses/about/team/06.jpg" alt="Team member"/>
+                  <div class="card-floating-links text-end">
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-facebook"></i>
+                    </a>
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-instagram"></i>
+                    </a>
+                    <a class="btn-social bs-light" href="index.html#">
+                      <i class="ci-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body py-3 text-center">
+                  <h4 class="card-title h5 mb-1">Kathryn Murphy</h4>
+                  <p class="card-text text-muted">Analyst and Marketing specialist</p>
+                </div>
+              </div>
+              <div class="card team bg-transparent">
+                <div class="card-img">
+                  <img src="/static/assets/img/online-courses/about/team/07.jpg" alt="Team member"/>
+                  <div class="card-floating-links text-end">
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-facebook"></i>
+                    </a>
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-instagram"></i>
+                    </a>
+                    <a class="btn-social bs-light" href="index.html#">
+                      <i class="ci-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body py-3 text-center">
+                  <h4 class="card-title h5 mb-1">Brooklyn Simmons</h4>
+                  <p class="card-text text-muted">Curator of Development Course</p>
+                </div>
+              </div>
+              <div class="card team bg-transparent">
+                <div class="card-img">
+                  <img src="/static/assets/img/online-courses/about/team/08.jpg" alt="Team member"/>
+                  <div class="card-floating-links text-end">
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-facebook"></i>
+                    </a>
+                    <a class="btn-social bs-light me-2" href="index.html#">
+                      <i class="ci-instagram"></i>
+                    </a>
+                    <a class="btn-social bs-light" href="index.html#">
+                      <i class="ci-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body py-3 text-center">
+                  <h4 class="card-title h5 mb-1">Cody Fisher</h4>
+                  <p class="card-text text-muted">UX Designer, Curator of Design Course</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Testimonials -->
+        <section class="container pt-5 pb-lg-5 pb-4">
+          <h3 class="h6 mb-2 text-uppercase text-sm-center">DEPOIMENTOS</h3>
+          <h2 class="h1 mb-lg-5 pb-md-2 text-sm-center">O que nossos alunos dizem?</h2>
+
+          <!-- Carousel -->
+          <div class="tns-carousel-wrapper tns-nav-outside tns-controls-outside pb-4">
+            <div class="tns-carousel-inner" data-carousel-options='{
+              "autoHeight": true,
+              "responsive": {
+                "0": {
+                  "controls": false
+                },
+                "768": {
+                  "controls": true
+                }
+              }
+            }'>
+
+              <!-- Carousel item -->
+              <div class="px-md-4">
+                <div class="blockquote-card card border-0 mb-md-4">
+                  <div class="card-body mt-sm-4 mx-xl-5 mx-sm-4 pb-0">
+                    <blockquote class="blockquote">
+                      <p class="lead">Vero dolores exercitationem quidem eum sit accusamus. Quisquam cumque nesciunt fugiat quae delectus quo earum deleniti, labore odio sint recusandae aperiam aut nemo placeat pariatur beatae dignissimos amet quos! A ipsam soluta possimus quisquam commodi natus nam aperiam ratione deleniti.</p>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer mb-sm-4 mx-xl-5 mx-sm-4 pt-0 border-0 d-flex align-items-center">
+                    <img class="me-3 rounded-circle" src="/static/assets/img/online-courses/testimonials/01.jpg" width="72" alt="Author">
+                    <div>
+                      <h3 class="h6 mb-0">Courtney Alexander</h3>
+                      <span class="fs-sm text-muted">Position, Company </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel item -->
+              <div class="px-md-4">
+                <div class="blockquote-card card border-0 mb-md-4">
+                  <div class="card-body mt-sm-4 mx-xl-5 mx-sm-4 pb-0">
+                    <blockquote class="blockquote">
+                      <p class="lead">Optio deleniti eos harum minus mollitia aut labore maxime rem ex dolores, dignissimos quidem exercitationem dicta praesentium quasi quia nam expedita sed blanditiis alias facere magnam pariatur asperiores. Ad et ullam eos maiores culpa reiciendis delectus ipsa. Eveniet tempora vel quo repellendus nihil, veniam numquam.</p>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer mb-sm-4 mx-xl-5 mx-sm-4 pt-0 border-0 d-flex align-items-center">
+                    <img class="me-3 rounded-circle" src="/static/assets/img/online-courses/testimonials/02.jpg" width="72" alt="Author">
+                    <div>
+                      <h3 class="h6 mb-0">Eleanor Pena</h3>
+                      <span class="fs-sm text-muted">Position, Course</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div> <!-- / Parallax wrapper -->
+
+
+
+      <!-- Subscribe -->
+      <section class="py-lg-6 py-5 bg-faded-primary bg-repeat-0 bg-position-center-bottom bg-size-cover" style="background-image: url(/static/assets/img/online-courses/subscribe-bg.png);">
+        <div class="container pt-md-4 pt-3 pb-md-5 pb-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+              <h3 class="h6 mb-2 text-uppercase text-center">NÃO PERCA NADA.</h3>
+              <h2 class="h1 mb-lg-5 pb-md-2 text-center">Inscreva-se nos anúncios da GlassMirror School</h2>
+            </div>
+            <div class="col-lg-6 col-md-8 col-sm-10">
+              <form class="input-group needs-validation" novalidate>
+                <input class="form-control rounded bg-light" type="email" placeholder="Seu E-mail de trabalho" required>
+                <button class="btn btn-gradient btn-hover-shadow ms-md-4 ms-sm-3 ms-2 rounded" type="submit">Subscrever</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{% endblock %}

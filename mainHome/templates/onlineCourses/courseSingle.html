@@ -1,0 +1,666 @@
+{% extends "baseCoursos.html" %} {% block title %}Nosso Centro{% endblock %}
+{% block content %}
+{% include '/modals/modaCurso/modalAluno.html' %}
+      <!-- Page title -->
+      {% if cursos %}
+      {% for curso in cursos %}
+      <section class="pt-6 pb-lg-6 pb-sm-5 pb-4 bg-faded-primary jarallax" data-jarallax data-speed="0.8">
+        <div class="jarallax-img" style="background-image: url(/static/assets/img/online-courses/courses/single/shapes/01.svg);"></div>
+        <div class="container pt-lg-6 pt-md-5 py-4">
+          <h3 class="h6 mb-2 text-uppercase text-primary text-center">CURSO {{curso.nomecursos}}</h3>
+          <h1 class="col-lg-9 mx-auto mb-0 text-center">Experiência do Usuário. Princípios do Design Centrado no Ser Humano</h1>
+        </div>
+      </section>
+
+
+      <!-- About -->
+      <section class="container pt-md-6 py-sm-5 pt-5 pb-4">
+        <div class="row pb-2">
+          <div class="col-md-6 mb-md-0 mb-grid-gutter">
+            <h2 class="h1 pb-sm-3">Sobre o curso</h2>
+            <p class="mb-sm-5 mb-grid-gutter">{{curso.descriptioncursos}}</p>
+            <h3>Você aprenderá:</h3>
+            <ul class="list-unstyled mb-0">
+              <li class="d-flex mb-2">
+                <i class="ci-check mt-1 me-3 text-primary"></i>
+                
+              </li>
+              <li class="d-flex mb-2">
+                <i class="ci-check mt-1 me-3 text-primary"></i>
+                
+              </li>
+              <li class="d-flex mb-2">
+                <i class="ci-check mt-1 me-3 text-primary"></i>
+                
+              </li>
+              <li class="d-flex mb-2">
+                <i class="ci-check mt-1 me-3 text-primary"></i>
+                
+              </li>
+              <li class="d-flex mb-2">
+                <i class="ci-check mt-1 me-3 text-primary"></i>
+                
+              </li>
+              <li class="d-flex mb-2">
+                <i class="ci-check mt-1 me-3 text-primary"></i>
+                
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-5 offset-lg-1 col-md-6">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <div class="mb-3 pt-3 px-2">
+                  {% include '_messages.html' %}
+                  <h6 class="mb-0 fs-sm text-uppercase">Datas</h6>
+                  <h4 class="mb-2 text-primary">{{curso.datainiciocursos}} -  {{curso.datafimcursos}}</h4>
+                  <p class="mb-0"></p>
+                </div>
+                <div class="mb-3 pt-3 px-2">
+                  <h6 class="mb-0 fs-sm text-uppercase">DURAÇÃO</h6>
+                  <h4 class="mb-2 text-primary">{{curso.duracaocursos}} Semanas – 8 aulas</h4>
+                  <p class="mb-0"></p>
+                </div>
+                <div class="mb-3 pt-3 px-2">
+                  <h6 class="mb-0 fs-sm text-uppercase">PREÇO</h6>
+                  <h4 class="mb-2 text-primary">Kz{{curso.price}}</h4>
+                  <p class="mb-0"></p>
+                </div>
+                <div class="mb-3 pt-4 px-2">
+                  <a href="#modalcoursesingle" data-bs-toggle="modal" data-view="#modal-signin-view" class="btn btn-gradient btn-hover-shadow d-block w-100">Join the course</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Curator -->
+      <section class="container pt-lg-6 py-sm-5 py-4">
+        <div class="row py-2">
+          <div class="col-sm-5 order-sm-1 order-2 mt-sm-0 mt-4 pt-sm-0 pt-3">
+            <div class="position-relative rounded" style="background-color: #FFCF2D;">
+              <img class="d-lg-block d-none w-50 position-absolute" style="right: 80%; bottom: 75%;" src="/static/assets/img/online-courses/curator/shape.svg" alt="Shape">
+              <div class="px-3">
+                <img class="mt-n4" src="{{url_for('static', filename='assets/img/ecommerce/shop/' + curso.image_curso)}}" alt="Cody Fisher">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 offset-lg-1 col-sm-7 order-sm-2 order-1">
+            <h6 class="mb-2 text-uppercase">CURADOR DO CURSO</h6>
+            <h2 class="h1 mb-3">Cody Fisher</h2>
+            <p class="pb-md-2 lead text-muted">Designer sênior de UX na Empresa de Produtos de TI</p>
+            <ul class="pb-md-3 pb-2 list-unstyled">
+              <li>
+                <i class="ci-star mt-n1 me-2 text-primary align-middle"></i>
+                <span class="fw-bold">taxa de 4,9</span>
+              </li>
+              <li>
+                <i class="ci-play-outline mt-n1 me-2 text-primary align-middle"></i>
+                <span class="fw-bold">4 cursos</span>
+              </li>
+              <li>
+                <i class="ci-profile mt-n1 me-2 text-primary align-middle"></i>
+                <span class="fw-bold">350 alunos</span>
+              </li>
+            </ul>
+            <p class="pb-md-3">Mattis adipiscing aliquam eu proin metus a iaculis faucibus. Tempus curabitur venenatis, vulputate venenatis fermentum ante. Nisl, amet id semper semper quis commodo, consequat. Massa rhoncus sit morbi odio. Sit maecenas nibh consectetur vel diam. Sem vulputate molestie laoreet at massa sed pharetra. Ac commodo platea id habitasse proin. Nullam sit nec ipsum posuere non. Nam vel aliquam tristique sollicitudin interdum quam. </p>
+            <div>
+              <a href="course-single.html#" class="btn-social me-2">
+                <i class="ci-linkedin"></i>
+              </a>
+              <a href="course-single.html#" class="btn-social me-2">
+                <i class="ci-behance"></i>
+              </a>
+              <a href="course-single.html#" class="btn-social me-2">
+                <i class="ci-facebook"></i>
+              </a>
+              <a href="course-single.html#" class="btn-social me-2">
+                <i class="ci-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Shaped bg -->
+      <div class="mb-lg-5 mb-4 bg-position-center-x bg-repeat-0" style="background-image: url(/static/assets/img/online-courses/courses/single/shapes/02.svg);">
+
+
+        <!-- Steps -->
+        <section class="mb-sm-5 mb-4 pt-lg-6 py-sm-5 py-4">
+          <div class="container">
+            <h6 class="mb-2 text-uppercase text-center">PRINCIPAIS PASSOS</h6>
+            <h2 class="h1 pb-3 text-center">Processo de aprendizagem online</h2>
+          </div>
+
+          <!-- Carousel -->
+          <div class="container px-0">
+            <div class="tns-carousel-wrapper tns-nav-outside mt-n4 ms-lg-n5">
+              <div class="tns-carousel-inner pt-4 ps-lg-5" data-carousel-options='{
+                "loop": false,
+                "controls": false,
+                "responsive": {
+                  "0": {
+                    "items": 1
+                  },
+                  "576": {
+                    "items": 2
+                  },
+                  "768": {
+                    "items": 3
+                  },
+                  "992": {
+                    "items": 4
+                  }
+                }
+              }'>
+
+                <!-- Horizontal step item -->
+                <div class="step pt-2 px-3">
+                  <div class="step-head mb-3">
+                    <span class="step-indicator">01</span>
+                    <span class="step-line"></span>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 mb-2">Assistindo palestras em vídeo online</h3>
+                    <p class="mb-0 text-muted">Culpa nostrud commodo ea consequat aliquip reprehenderit. Veniam velit nostrud aliquip sunt.</p>
+                  </div>
+                </div>
+
+                <!-- Horizontal step item -->
+                <div class="step pt-2 px-3">
+                  <div class="step-head mb-3">
+                    <span class="step-indicator">02</span>
+                    <span class="step-line"></span>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 mb-2">Passando no teste</h3>
+                    <p class="mb-0 text-muted">Anim reprehenderit sint voluptate exercitation adipisicing laborum adipisicing. Minim ad tempor.</p>
+                  </div>
+                </div>
+
+                <!-- Horizontal step item -->
+                <div class="step pt-2 px-3">
+                  <div class="step-head mb-3">
+                    <span class="step-indicator">03</span>
+                    <span class="step-line"></span>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 mb-2">Feedback do curador</h3>
+                    <p class="mb-0 text-muted">Sit veniam aute dolore adipisicing nulla sit culpa. Minim mollit voluptate ullamco proident ea ad.</p>
+                  </div>
+                </div>
+
+                <!-- Horizontal step item -->
+                <div class="step pt-2 px-3">
+                  <div class="step-head mb-3">
+                    <span class="step-indicator">04</span>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 mb-2">Correções, se necessario</h3>
+                    <p class="mb-0 text-muted">Adipisicing esse aliqua aliquip qui amet. Aute eiusmod dolore dolore et ad et veniamad.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Discount -->
+        <section>
+          <div class="container py-5 position-relative">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient opacity-25 rounded"></div>
+            <div class="position-relative py-2 px-lg-5 px-sm-4 zindex-2">
+              <div class="d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-md-between mb-4">
+                <h2 class="mb-md-0 text-md-start text-center">20% de desconto para pássaros precoces!</h2>
+
+                <!-- Countdown -->
+                <div class="countdown h5 mb-0" data-countdown="10/01/2022 07:00:00 PM">
+                  <div class="countdown-days">
+                    <span class="countdown-value">0</span>
+                    <span class="countdown-label text-body">Dias</span>
+                  </div>
+                  <div class="countdown-hours">
+                    <span class="countdown-value">0</span>
+                    <span class="countdown-label text-body">Horas</span>
+                  </div>
+                  <div class="countdown-minutes">
+                    <span class="countdown-value">0</span>
+                    <span class="countdown-label text-body">Minutos</span>
+                  </div>
+                  <div class="countdown-seconds">
+                    <span class="countdown-value">0</span>
+                    <span class="countdown-label text-body">Segundos</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Discount form -->
+              <form class="row needs-validation" novalidate>
+                <div class="col-lg-3 col-sm-6">
+                  <div class="mb-sm-4 mb-3">
+                    <label for="discount-name" class="form-label-lg">Nome completo</label>
+                    <input class="form-control" type="text" id="discount-name" placeholder="Your full name" required>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                  <div class="mb-sm-4 mb-3">
+                    <label for="discount-email" class="form-label-lg">Email</label>
+                    <input class="form-control" type="email" id="discount-email" placeholder="Your working email" required>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                  <div class="mb-sm-4 mb-3">
+                    <label for="discount-tel" class="form-label-lg">Telefone</label>
+                    <input class="form-control bg-image-0" type="tel" id="discount-tel" placeholder="Your phone number">
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 d-flex align-items-end pt-sm-0 pt-4">
+                  <button type="submit" class="btn btn-gradient d-block w-100 mb-sm-4">Participa do Curso</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+      </div> <!-- / Shaped bg -->
+
+
+      <!-- Benefits -->
+      <section class="container pt-lg-6 py-sm-5 pt-5 pb-4">
+        <h6 class="mb-2 text-uppercase">PARA QUEM?</h6>
+        <div class="row">
+          <div class="col-md-5">
+            <h2 class="h1 mb-3">Quem se beneficiará do curso:</h2>
+          </div>
+          <div class="col-md-6 offset-md-1">
+            <ul class="list-unstyled mb-0">
+              <li class="d-flex mb-2 pb-1">
+                <i class="ci-check mt-1 me-3 text-primary"></i>
+                <span class="lead fw-bold">Especialistas com mais de 1 ano de experiência ativa</span>
+              </li>
+              <li class="d-flex mb-2 pb-1">
+                <i class="ci-check mt-1 me-3 text-primary"></i>
+                <span class="lead fw-bold">Designers de aplicativos móveis que querem melhorar suas habilidades na resolução de problemas de negócios, criação e teste de interfaces centradas em humanos</span>
+              </li>
+              <li class="d-flex mb-2 pb-1">
+                <i class="ci-check mt-1 me-3 text-primary"></i>
+                <span class="lead fw-bold">Designers profissionais que querem se sentir mais confiantes em UX</span>
+              </li>
+              <li class="d-flex mb-2 pb-1">
+                <i class="ci-check mt-1 me-3 text-primary"></i>
+                <span class="lead fw-bold">Especialistas que gostariam de estruturar seus conhecimentos, preencher as lacunas</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Program -->
+      <section class="container py-lg-6 py-5">
+        <h6 class="mb-2 text-uppercase">CURSO</h6>
+        <div class="row py-md-3 py-lg-0">
+          <div class="col-md-6">
+            <h2 class="h1 pb-md-3">O que você vai aprender</h2>
+
+            <!-- Accordion -->
+            <div class="accordion" id="accordionProgram">
+
+              <!-- Item -->
+              <div class="accordion-item mb-3">
+                <h5 class="accordion-header" id="accordionProgramHeading-1">
+                  <button class="accordion-button pt-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#accordionProgramCollapse-1" aria-expanded="true" aria-controls="accordionProgramCollapse-1">
+                    <span>
+                      <span class="pe-2 fw-normal text-primary">Lição 1.</span>
+                      {{curso.licao_1}}
+                    </span>
+                  </button>
+                </h5>
+                <div class="accordion-collapse border-0 collapse show" id="accordionProgramCollapse-1" aria-labelledby="accordionProgramHeading-1" data-bs-parent="#accordionProgram">
+                  <div class="accordion-body">{{curso.licao_1}}</div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="accordion-item mb-3">
+                <h5 class="accordion-header" id="accordionProgramHeading-2">
+                  <button class="accordion-button pt-0 border-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionProgramCollapse-2" aria-expanded="false" aria-controls="accordionProgramCollapse-2">
+                    <span>
+                      <span class="pe-2 fw-normal text-primary">Lição 2.</span>
+                      {{curso.licao_2}}
+                    </span>
+                  </button>
+                </h5>
+                <div class="accordion-collapse border-0 collapse" id="accordionProgramCollapse-2" aria-labelledby="accordionProgramHeading-2" data-bs-parent="#accordionProgram">
+                  <div class="accordion-body">{{curso.licao_2}}</div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="accordion-item mb-3">
+                <h5 class="accordion-header" id="accordionProgramHeading-3">
+                  <button class="accordion-button pt-0 border-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionProgramCollapse-3" aria-expanded="false" aria-controls="accordionProgramCollapse-3">
+                    <span>
+                      <span class="pe-2 fw-normal text-primary">Lição 3.</span>
+                      {{curso.licao_3}}
+                    </span>
+                  </button>
+                </h5>
+                <div class="accordion-collapse border-0 collapse" id="accordionProgramCollapse-3" aria-labelledby="accordionProgramHeading-3" data-bs-parent="#accordionProgram">
+                  <div class="accordion-body">{{curso.licao_3}}</div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="accordion-item mb-3">
+                <h5 class="accordion-header" id="accordionProgramHeading-4">
+                  <button class="accordion-button pt-0 border-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionProgramCollapse-4" aria-expanded="false" aria-controls="accordionProgramCollapse-4">
+                    <span>
+                      <span class="pe-2 fw-normal text-primary">Lição 4.</span>
+                      {{curso.licao_4}}
+                    </span>
+                  </button>
+                </h5>
+                <div class="accordion-collapse border-0 collapse" id="accordionProgramCollapse-4" aria-labelledby="accordionProgramHeading-4" data-bs-parent="#accordionProgram">
+                  <div class="accordion-body">{{curso.licao_4}}</div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="accordion-item mb-3">
+                <h5 class="accordion-header" id="accordionProgramHeading-5">
+                  <button class="accordion-button pt-0 border-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionProgramCollapse-5" aria-expanded="false" aria-controls="accordionProgramCollapse-5">
+                    <span>
+                      <span class="pe-2 fw-normal text-primary">Lição 5.</span>
+                      {{curso.licao_5}}
+                    </span>
+                  </button>
+                </h5>
+                <div class="accordion-collapse border-0 collapse" id="accordionProgramCollapse-5" aria-labelledby="accordionProgramHeading-5" data-bs-parent="#accordionProgram">
+                  <div class="accordion-body">{{curso.licao_5}}</div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="accordion-item mb-3">
+                <h5 class="accordion-header" id="accordionProgramHeading-6">
+                  <button class="accordion-button pt-0 border-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionProgramCollapse-6" aria-expanded="false" aria-controls="accordionProgramCollapse-6">
+                    <span>
+                      <span class="pe-2 fw-normal text-primary">Lição 6.</span>
+                      {{curso.licao_6}}
+                    </span>
+                  </button>
+                </h5>
+                <div class="accordion-collapse border-0 collapse" id="accordionProgramCollapse-6" aria-labelledby="accordionProgramHeading-6" data-bs-parent="#accordionProgram">
+                  <div class="accordion-body">{{curso.licao_6}}</div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="accordion-item mb-3">
+                <h5 class="accordion-header" id="accordionProgramHeading-7">
+                  <button class="accordion-button pt-0 border-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionProgramCollapse-7" aria-expanded="false" aria-controls="accordionProgramCollapse-7">
+                    <span>
+                      <span class="pe-2 fw-normal text-primary">Lição 7.</span>
+                      {{curso.licao_7}}
+                    </span>
+                  </button>
+                </h5>
+                <div class="accordion-collapse border-0 collapse" id="accordionProgramCollapse-7" aria-labelledby="accordionProgramHeading-7" data-bs-parent="#accordionProgram">
+                  <div class="accordion-body">{{curso.licao_7}}</div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="accordion-item mb-3">
+                <h5 class="accordion-header" id="accordionProgramHeading-8">
+                  <button class="accordion-button pt-0 border-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionProgramCollapse-8" aria-expanded="false" aria-controls="accordionProgramCollapse-8">
+                    <span>
+                      <span class="pe-2 fw-normal text-primary">Lição 8.</span>
+                      {{curso.licao_8}}
+                    </span>
+                  </button>
+                </h5>
+                <div class="accordion-collapse border-0 collapse" id="accordionProgramCollapse-8" aria-labelledby="accordionProgramHeading-8" data-bs-parent="#accordionProgram">
+                  <div class="accordion-body">{{curso.licao_8}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 offset-lg-1 col-md-6 mt-md-0 mt-4">
+            <img class="d-block mx-auto" src="/static/assets/img/online-courses/courses/single/illustrations/01.svg" alt="Program">
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Parallax wrapper -->
+      <div class="bg-secondary jarallax" data-jarallax data-speed="0.8">
+
+
+        <!-- Parallax image -->
+        <div class="jarallax-img" style="background-image: url(/static/assets/img/online-courses/home/shapes/03-team-testimonials.svg);"></div>
+
+
+        <!-- Testimonials -->
+        <section class="container pt-lg-6 pt-5 pb-4">
+          <h3 class="h6 mb-2 text-uppercase text-sm-center">DEPOIMENTOS</h3>
+          <h2 class="h1 mb-lg-5 pb-md-2 text-sm-center">O que nossos alunos dizem</h2>
+
+          <!-- Carousel -->
+          <div class="tns-carousel-wrapper tns-nav-outside tns-controls-outside pb-4">
+            <div class="tns-carousel-inner" data-carousel-options='{
+              "autoHeight": true,
+              "responsive": {
+                "0": {
+                  "controls": false
+                },
+                "768": {
+                  "controls": true
+                }
+              }
+            }'>
+
+              <!-- Carousel item -->
+              <div class="px-md-4">
+                <div class="blockquote-card card border-0 mb-md-4">
+                  <div class="card-body mt-sm-4 mx-xl-5 mx-sm-4 pb-0">
+                    <blockquote class="blockquote">
+                      <p class="lead">Vero dolores exercitationem quidem eum sit accusamus. Quisquam cumque nesciunt fugiat quae delectus quo earum deleniti, labore odio sint recusandae aperiam aut nemo placeat pariatur beatae dignissimos amet quos! A ipsam soluta possimus quisquam commodi natus nam aperiam ratione deleniti.</p>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer mb-md-5 mb-4 mx-xl-5 mx-sm-4 pt-0 border-0 d-flex align-items-center">
+                    <img class="me-3 rounded-circle" src="/static/assets/img/online-courses/testimonials/01.jpg" width="72" alt="Author">
+                    <div>
+                      <h3 class="h6 mb-0">Courtney Alexander</h3>
+                      <span class="fs-sm text-muted">Position, Company </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel item -->
+              <div class="px-md-4">
+                <div class="blockquote-card card border-0 mb-md-4">
+                  <div class="card-body mt-sm-4 mx-xl-5 mx-sm-4 pb-0">
+                    <blockquote class="blockquote">
+                      <p class="lead">Optio deleniti eos harum minus mollitia aut labore maxime rem ex dolores, dignissimos quidem exercitationem dicta praesentium quasi quia nam expedita sed blanditiis alias facere magnam pariatur asperiores. Ad et ullam eos maiores culpa reiciendis delectus ipsa. Eveniet tempora vel quo repellendus nihil, veniam numquam.</p>
+                    </blockquote>
+                  </div>
+                  <div class="card-footer mb-md-5 mb-4 mx-xl-5 mx-sm-4 pt-0 border-0 d-flex align-items-center">
+                    <img class="me-3 rounded-circle" src="/static/assets/img/online-courses/testimonials/02.jpg" width="72" alt="Author">
+                    <div>
+                      <h3 class="h6 mb-0">Eleanor Pena</h3>
+                      <span class="fs-sm text-muted">Position, Course</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Register -->
+        <section class="container pb-lg-6 pb-5 pt-4">
+          <div class="row">
+            <div class="col-md-6 order-md-1 order-2">
+              <img src="/static/assets/img/online-courses/courses/single/illustrations/02.svg" alt="Register">
+            </div>
+            <div class="col-lg-5 offset-lg-1 col-md-6 order-md-2 order-1 mb-md-0 mb-4">
+              <h3 class="h6 mb-2 text-uppercase">DEIXE UM PEDIDO AGORA E TIRE 20% DE DESCONTO!</h3>
+              <h2 class="h1 mb-lg-5 pb-md-2">Inscreva-se para o curso</h2>
+              <form class="needs-validation" novalidate>
+                <div class="mb-sm-4 mb-3">
+                  <label for="register-name" class="form-label-lg">Nome completo</label>
+                  <input class="form-control" type="text" id="register-name" placeholder="Your full name" required>
+                </div>
+                <div class="mb-sm-4 mb-3">
+                  <label for="register-email" class="form-label-lg">Email</label>
+                  <input class="form-control" type="text" id="register-email" placeholder="Your working email" required>
+                </div>
+                <div class="mb-sm-4 mb-3">
+                  <label for="register-tel" class="form-label-lg">Telefone</label>
+                  <input class="form-control bg-image-0" type="text" id="register-tel" placeholder="Your phone number">
+                </div>
+                <div class="pt-2">
+                  <button type="submit" class="btn btn-gradient btn-hover-shadow d-block w-100">Join the course</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+
+      </div> <!-- / Parallax wrapper -->
+
+
+      <!-- Other courses -->
+      <section class="container pt-lg-6 pt-5 pb-lg-5 pb-4">
+        <h3 class="h6 mb-2 text-uppercase">CONFIRA OUTROS CURSOS</h3>
+        <div class="mb-lg-5 mb-4 pb-md-2 d-flex justify-content-between">
+          <h2 class="h1 mb-0">Você também pode gostar</h2>
+          <div class="tns-custom-controls tns-controls-inverse mb-md-n4" id="tns-courses-controls" tabindex="0">
+            <button type="button" data-controls="prev" tabindex="-1">
+              <i class="ci-arrow-left"></i>
+            </button>
+            <button type="button" data-controls="next" tabindex="-1">
+              <i class="ci-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carousel component -->
+        <div class="tns-carousel-wrapper">
+          <div class="tns-carousel-inner" data-carousel-options='{
+            "gutter": 30,
+            "nav": false,
+            "controlsContainer": "#tns-courses-controls",
+            "responsive": {
+              "0": {
+                "items": 1
+              },
+              "768": {
+                "items": 2
+              }
+            }
+          }'>
+            <div class="mb-5 pb-md-4">
+              <a href="course-single.html#" class="card card-horizontal card-hover shadow heading-highlight">
+                <div class="card-img-top bg-position-center-top" style="background-image: url(/static/assets/img/online-courses/courses/curator/01.jpg);"></div>
+                <div class="card-body">
+                  <span class="badge bg-success mb-3 fs-sm">Marketing</span>
+                  <h5 class="card-title hover-heading mb-3 py-1">The Ultimate Google Ads Training Course</h5>
+                  <div class="text-muted">
+                    <span class="fw-bold text-primary">$100</span>
+                    <span class="text-border px-1">|</span>
+                    by Jerome Bell
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="mb-5 pb-md-4">
+              <a href="course-single.html#" class="card card-horizontal card-hover shadow heading-highlight">
+                <div class="card-img-top bg-position-center-top" style="background-image: url(/static/assets/img/online-courses/courses/curator/02.jpg);"></div>
+                <div class="card-body">
+                  <span class="badge bg-info mb-3 fs-sm">Management</span>
+                  <h5 class="card-title hover-heading mb-3 py-1">Product Management Fundamentals</h5>
+                  <div class="text-muted">
+                    <span class="fw-bold text-primary">$480</span>
+                    <span class="text-border px-1">|</span>
+                    by Jerome Bell
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="mb-5 pb-md-4">
+              <a href="course-single.html#" class="card card-horizontal card-hover shadow heading-highlight">
+                <div class="card-img-top bg-position-center-top" style="background-image: url(/static/assets/img/online-courses/courses/curator/03.jpg);"></div>
+                <div class="card-body">
+                  <span class="badge bg-warning mb-3 fs-sm">HR &amp; Recruting</span>
+                  <h5 class="card-title hover-heading mb-3 py-1">HR  Management and Analytics</h5>
+                  <div class="text-muted">
+                    <span class="fw-bold text-primary">$200</span>
+                    <span class="text-border px-1">|</span>
+                    by Jerome Bell
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="mb-5 pb-md-4">
+              <a href="course-single.html#" class="card card-horizontal card-hover shadow heading-highlight">
+                <div class="card-img-top bg-position-center-top" style="background-image: url(/static/assets/img/online-courses/courses/curator/04.jpg);"></div>
+                <div class="card-body">
+                  <span class="badge bg-success mb-3 fs-sm">Marketing</span>
+                  <h5 class="card-title hover-heading mb-3 py-1">Brand Management & PR Communications</h5>
+                  <div class="text-muted">
+                    <span class="fw-bold text-primary">$530</span>
+                    <span class="text-border px-1">|</span>
+                    by Jerome Bell
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="mb-5 pb-md-4">
+              <a href="course-single.html#" class="card card-horizontal card-hover shadow heading-highlight">
+                <div class="card-img-top bg-position-center-top" style="background-image: url(/static/assets/img/online-courses/courses/curator/05.jpg);"></div>
+                <div class="card-body">
+                  <span class="badge bg-info mb-3 fs-sm">Management</span>
+                  <h5 class="card-title hover-heading mb-3 py-1">Business Development Management</h5>
+                  <div class="text-muted">
+                    <span class="fw-bold text-primary">$400</span>
+                    <span class="text-border px-1">|</span>
+                    by Jerome Bell
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="mb-5 pb-md-4">
+              <a href="course-single.html#" class="card card-horizontal card-hover shadow heading-highlight">
+                <div class="card-img-top bg-position-center-top" style="background-image: url(/static/assets/img/online-courses/courses/curator/06.jpg);"></div>
+                <div class="card-body">
+                  <span class="badge mb-3 fs-sm text-light" style="background-color: #F52F6E;">Design</span>
+                  <h5 class="card-title hover-heading mb-3 py-1">Graphic Design Basic</h5>
+                  <div class="text-muted">
+                    <span class="fw-bold text-primary">$500</span>
+                    <span class="text-border px-1">|</span>
+                    by Jerome Bell
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <h4 class="h3 text-center">
+          Você quer mais?
+          <a href="courses.html" class="btn btn-lg btn-gradient btn-hover-shadow d-sm-inline-block d-block mt-sm-0 mt-4 ms-sm-4">Explore todos os eventos</a>
+        </h4>
+      </section>
+{% endfor %}
+{% endif %}
+{% endblock %}

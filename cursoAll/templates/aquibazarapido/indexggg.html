@@ -1,0 +1,28 @@
+{% extends "baseEcommmcers.html" %} {% block title %}BazaRapido- {{ User.username,clientes.username }}{% endblock %}
+{% block content %}
+<div class="page-header">
+<h1>{{ clientes.username }}</h1>
+{% if clientes.name or clientes.location %}
+<p>
+{% if clientes.name %}{{ clientes.name }}{% endif %}
+{% if clientes.location %}
+From <a href="http://maps.google.com/?q={{ clientes.location }}">
+{{ clientes.location }}
+</a>
+{% endif %}
+</p>
+{% endif %}
+{% if current_user.is_administrator() %}
+<p><a href="mailto:{{ clientes.email }}">{{ clientes.email }}</a></p>
+{% endif %}
+{% if clientes.about_me %}<p>{{ clientes.about_me }}</p>{% endif %}
+<p>
+Member since {{ moment(clientes.member_since).format('L') }}.
+Last seen {{ moment(clientes.last_seen).fromNow() }}.
+</p>
+</div>
+
+  {% endblock content %}
+
+
+

@@ -1,0 +1,698 @@
+{% load static tailwind_tags %}
+{% load cart_template_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Baza Rapido - Multipurpose">
+    <meta name="keywords" content="So  Venda de todo artigos ">
+    <meta name="author" content="Createx Studio">
+
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/img/favicon-16x16.png">
+    <link rel="manifest" href="/static/assets/img/site.webmanifest">
+    <link rel="mask-icon" color="#5bbad5" href="/static/assets/img/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="/static/assets/vendor/tiny-slider/dist/tiny-slider.css"/>
+
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="/static/assets/css/demo/ecommerce/theme.min.css">
+
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #787a80;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #cfcfd1;
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"> </script>
+    <!-- Demo switcher offcanvas toggle styles -->
+    <style>
+      .demo-switcher {
+        position: fixed;
+        display: block;
+        top: 50%;
+        right: 1rem;
+        z-index: 100;
+      }
+      .demo-switcher-inner {
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid #e5e8ed;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #1e212c;
+        font-size: 1.25rem;
+        line-height: 3rem;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0px 10px 15px 0px rgba(30,33,44,0.10);
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WKV3GT5');
+    </script>
+  </head>
+
+
+  <!-- Body-->
+  <body>
+
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+    </noscript>
+
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>A Carregar...</span>
+      </div>
+    </div>
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    
+    <main class="page-wrapper">
+      <!-- Demo switcher offcanvas toggle -->
+      <!-- Shopping cart offcanvas -->
+         
+      <div id="cart" class="offcanvas offcanvas-end">
+        <!-- Header -->
+     
+        <div class="offcanvas-header align-items-center border-bottom">
+          <h2 class="h5 mb-0">Teu Carinho (17)</h2>
+          <button class="btn-close me-n1" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        
+        <!-- Body -->
+        <div class="offcanvas-body">
+          <!-- Item -->
+          <div class="d-flex align-items-start p-4 border-bottom mx-n4">
+            <a href="shop-single.html" style="min-width: 80px;">
+              <img src="/static/assets/img/ecommerce/cart/01.png" width="80" alt="Product thumb">
+            </a>
+            <div class="w-100 ps-3">
+              <div class="d-flex justify-content-between">
+                <div class="w-100 pe-2">
+                  <h3 class="fs-sm mb-3">
+                    <a href="shop-single.html" class="nav-link fw-bold">Basic hooded sweatshirt in pink</a>
+                  </h3>
+                  <ul class="list-unstyled fs-xs mt-n2 mb-2">
+                    <li class="mb-0"><span class="text-muted">Color:</span> Pink</li>
+                    <li class="mb-0"><span class="text-muted">Size:</span> S</li>
+                  </ul>
+                  <div class="d-flex align-items-center">
+                    <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                    <div class="text-nowrap"><strong class="text-danger">$15.00</strong> <s class="fs-xs text-muted">$31.00</s></div>
+                  </div>
+                  <button class="btn btn-link btn-sm text-decoration-none px-0 pb-0">
+                    Move to
+                    <i class="ci-heart ms-1"></i>
+                  </button>
+                </div>
+                <div class="nav-muted me-n2">
+                  <a href="lojahome#" class="nav-link px-2 mt-n2" data-bs-toggle="tooltip" title="Remove"><i class="ci-delete"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item -->
+          <div class="d-flex align-items-start p-4 border-bottom mx-n4">
+            <a href="shop-single.html" style="min-width: 80px;">
+              <img src="/static/assets/img/ecommerce/cart/02.png" width="80" alt="Product thumb">
+            </a>
+            <div class="w-100 ps-3">
+              <div class="d-flex justify-content-between">
+                <div class="w-100 pe-2">
+                  <h3 class="fs-sm mb-3">
+                    <a href="shop-single.html" class="nav-link fw-bold">Black and white sport cap</a>
+                  </h3>
+                  <div class="d-flex align-items-center">
+                    <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                    <div class="text-nowrap"><strong>$18.15</strong>
+                    </div>
+                  </div>
+                  <button class="btn btn-link btn-sm text-decoration-none px-0 pb-0">
+                    Move to
+                    <i class="ci-heart ms-1"></i>
+                  </button>
+                </div>
+                <div class="nav-muted me-n2">
+                  <a href="lojahome#" class="nav-link px-2 mt-n2" data-bs-toggle="tooltip" title="Remove"><i class="ci-delete"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item -->
+          <div class="d-flex align-items-start p-4 border-bottom mx-n4">
+            <a href="shop-single.html" style="min-width: 80px;">
+              <img src="/static/assets/img/ecommerce/cart/03.png" width="80" alt="Product thumb">
+            </a>
+            <div class="w-100 ps-3">
+              <div class="d-flex justify-content-between">
+                <div class="w-100 pe-2">
+                  <h3 class="fs-sm mb-3">
+                    <a href="shop-single.html" class="nav-link fw-bold">Mid-rise slim cropped fit jeans</a>
+                  </h3>
+                  <ul class="list-unstyled fs-xs mt-n2 mb-2">
+                    <li class="mb-0"><span class="text-muted">Size:</span> M</li>
+                  </ul>
+                  <div class="d-flex align-items-center">
+                    <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                    <div class="text-nowrap"><strong>$76.00</strong></div>
+                  </div>
+                  <button class="btn btn-link btn-sm text-decoration-none px-0 pb-0">
+                    Move to
+                    <i class="ci-heart ms-1"></i>
+                  </button>
+                </div>
+                <div class="nav-muted me-n2">
+                  <a href="lojahome#" class="nav-link px-2 mt-n2" data-bs-toggle="tooltip" title="Remove"><i class="ci-delete"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item -->
+          <div class="d-flex align-items-start p-4 mx-n4">
+            <a href="shop-single.html" style="min-width: 80px;">
+              <img src="/static/assets/img/ecommerce/cart/04.png" width="80" alt="Product thumb">
+            </a>
+            <div class="w-100 ps-3">
+              <div class="d-flex justify-content-between">
+                <div class="w-100 pe-2">
+                  <h3 class="fs-sm mb-3">
+                    <a href="shop-single.html" class="nav-link fw-bold">Men fashion gray shoes</a>
+                  </h3>
+                  <ul class="list-unstyled fs-xs mt-n2 mb-2">
+                    <li class="mb-0"><span class="text-muted">Color:</span> Gray</li>
+                    <li class="mb-0"><span class="text-muted">Size:</span> 10.5</li>
+                  </ul>
+                  <div class="d-flex align-items-center">
+                    <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                    <div class="text-nowrap"><strong>$84.00</strong></div>
+                  </div>
+                  <button class="btn btn-link btn-sm text-decoration-none px-0 pb-0">
+                    Move to
+                    <i class="ci-heart ms-1"></i>
+                  </button>
+                </div>
+                <div class="nav-muted me-n2">
+                  <a href="lojahome#" class="nav-link px-2 mt-n2" data-bs-toggle="tooltip" title="Remove"><i class="ci-delete"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="offcanvas-footer flex-column border-top">
+          <div class="d-flex align-items-center justify-content-between mb-3 pb-1">
+            <span class="text-muted me-2">Subtotal:</span>
+            <span class="h5 mb-0">$198.65</span>
+          </div>
+          <a href="checkout" class="btn btn-primary btn-lg d-block w-100">
+            <i class="ci-credit-card fs-lg mt-n1 me-1"></i>
+            Checkout
+          </a>
+        </div>
+      </div>
+
+
+      {% include 'registration/login.html' %}
+
+
+      <!-- Header (Topbar + Navbar) -->
+      <header class="header">
+
+        <!-- Topbar -->
+        <div class="topbar topbar-dark bg-dark">
+          <div class="container d-flex align-items-center px-0 px-xl-3">
+            <div class="me-3">
+              <a href="tel:4055550128" class="topbar-link d-md-inline-block d-none">
+                Available 24/7 at
+                <span class='fw-bold'>(405) 555-0128</span>
+              </a>
+              <a href="tel:4055550128" class="topbar-link d-md-none d-inline-block text-nowrap">
+                <i class="ci-iphone align-middle"></i>
+                (405) 555-0128
+              </a>
+            </div>
+            <a href="order-tracking.html" class="topbar-link ms-auto me-4 pe-sm-2 text-nowrap">
+              <i class="ci-map-pin-outline me-1 fs-base align-middle"></i>
+              Track <span class="d-none d-sm-inline">order</span>
+            </a>
+            <div class="dropdown">
+              <a href="index.html#" class="topbar-link dropdown-toggle" data-bs-toggle="dropdown">
+                <img src="../assets/img/ecommerce/flags/en.png" class="me-2" width="20" alt="English">
+                Eng / $
+              </a>
+              <div class="dropdown-menu dropdown-menu-end">
+                <a href="index.html#" class="dropdown-item">
+                  <img src="../assets/img/ecommerce/flags/fr.png" class="me-2" width="20" alt="Français">
+                  Français / €
+                </a>
+                <a href="index.html#" class="dropdown-item">
+                  <img src="../assets/img/ecommerce/flags/de.png" class="me-2" width="20" alt="Deutsch">
+                  Deutsch / €
+                </a>
+                <a href="index.html#" class="dropdown-item">
+                  <img src="../assets/img/ecommerce/flags/it.png" class="me-2" width="20" alt="Italiano">
+                  Italiano / €
+                </a>
+              </div>
+            </div>
+
+            {% if user.is_authenticated %}
+            <div class="dropdown">
+              <a href="account-profile.html#" class="topbar-link dropdown-toggle d-lg-inline-block d-none ms-4 ps-1 text-decoration-none text-nowrap" data-bs-toggle="dropdown">
+                <i class="ci-profile me-1 fs-base align-middle"></i>
+                {{user.username}}
+              </a>
+              <div class="dropdown-menu dropdown-menu-end">
+                <a href="account-profile.html" class="dropdown-item d-flex align-items-center">
+                  <i class="ci-profile fs-base me-2"></i>
+                  <span>My profile</span>
+                </a>
+                <a href="{% url 'markeplace:order-summary' %}" class="dropdown-item d-flex align-items-center">
+                  <i class="ci-bag fs-base me-2"></i>
+                  <span>Minhas Compras</span>
+                </a>
+                <a href="account-wishlist.html" class="dropdown-item d-flex align-items-center">
+                  <i class="ci-heart fs-base me-2"></i>
+                  <span>Wishlist</span>
+                  <span class="badge bg-warning ms-auto">2</span>
+                </a>
+                <a href="account-recently-viewed.html" class="dropdown-item d-flex align-items-center">
+                  <i class="ci-eye fs-base me-2"></i>
+                  <span>Recently viewed</span>
+                </a>
+                <a href="account-reviews.html" class="dropdown-item d-flex align-items-center">
+                  <i class="ci-star fs-base me-2"></i>
+                  <span>My reviews</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="{% url 'markeplace:logout' %}" class="dropdown-item d-flex align-items-center">
+                  <i class="ci-logout fs-base me-2"></i>
+                  <span>Sair</span>
+                </a>
+              </div>
+            </div>
+            {% else %}
+            <a href="index.html#modal-signin" class="topbar-link d-lg-inline-block d-none ms-4 ps-1 text-decoration-none text-nowrap" data-bs-toggle="modal" data-view="#modal-signin-view">
+              <i class="ci-profile me-1 fs-base align-middle"></i>
+              Sign in / up
+            </a>
+            {% endif %} 
+          </div>
+        </div>
+
+        <!-- Navbar -->
+        <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+        <div class="navbar navbar-expand-lg navbar-light bg-light navbar-sticky" data-fixed-element>
+          <div class="container px-0 px-xl-3">
+            <a href="index.html" class="navbar-brand order-lg-1 me-0 pe-lg-3 me-lg-4">
+              <img src="/static/assets/img/ecommerce/logo.svg" alt="Createx Logo" width="130">
+            </a>
+            <!-- Search desktop -->
+            <div class="input-group ms-4 d-lg-block d-none order-lg-3" style="max-width: 21rem;">
+              <input class="form-control w-100 pe-5 rounded" type="text" placeholder="Search for products...">
+              <i class="ci-search lead position-absolute end-0 top-50 translate-middle-y me-3 zindex-5"></i>
+            </div>
+            <!-- Toolbar -->
+
+            <div class="d-flex align-items-center order-lg-3">
+
+              <ul class="nav nav-tools flex-nowrap">
+                {% if request.user.is_authenticated %}
+                <li class="nav-item d-lg-block d-none mb-0">
+                  <a href="account-wishlist.html" class="nav-tool">
+                    <i class="ci-heart nav-tool-icon"></i>
+                    <span class="nav-tool-label">{{ request.user|cart_item_count }}</span>
+                    {% else %}
+                    <span class="nav-tool-label">0</span>                    
+                  </a>                  
+                </li>
+                {% endif %}
+
+                <li class="divider-vertical mb-0 d-lg-block d-none"></li>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item align-self-center mb-0">
+                  <a href="index.html#" class="nav-tool pe-lg-0" data-bs-toggle="offcanvas" data-bs-target="#cart">
+                    <i class="ci-cart nav-tool-icon"></i>
+                    <span class="badge bg-success align-middle mt-n1 ms-2 px-2 py-1 fs-xs">{{ request.user|cart_item_count }}</span>
+                    {% else %}
+                    <span class="badge bg-success align-middle mt-n1 ms-2 px-2 py-1 fs-xs">0</span>
+                  </a>
+                </li>
+                {% endif %}
+                <li class="divider-vertical mb-0 d-lg-none d-block"></li>
+                <li class="nav-item mb-0">
+                  <button class="navbar-toggler mt-n1 me-n3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Navbar collapse -->
+            <nav class="collapse navbar-collapse order-lg-2" id="navbarCollapse">
+              <!-- Search mobile -->
+              <div class="input-group mb-0 d-lg-none d-block">
+                <input class="form-control w-100 ps-5 rounded-0 border-0" type="text" placeholder="Search for products...">
+                <i class="ci-search lead position-absolute start-0 top-50 translate-middle-y ms-3 zindex-5"></i>
+              </div>
+              <!-- Menu -->
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a href="markeplace:homepage" class="nav-link active">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a href="{% url 'markeplace:lojahome' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Loja</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'markeplace:lojaiTems' %}" class="dropdown-item">Todos Artigos</a></li>
+                    <li><a href="shop-single.html" class="dropdown-item">Single Product</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown mega-dropdown">
+                  <a href="index.html#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Megamenu</a>
+                  <div class="dropdown-menu">
+                    <div class="container pt-lg-1 pb-lg-3">
+                      <div class="row">
+                        <div class="col-lg-2 col-md-3 py-2">
+                          <ul class="list-unstyled">
+                            <li><a href="index.html#" class="dropdown-item">New collection</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Best sellers</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Plus size</a></li>
+                            <li><a href="index.html#" class="dropdown-item text-danger">Sale up to 70%</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-3 py-2">
+                          <h4 class="fs-sm text-uppercase pt-1 mb-2">Clothes</h4>
+                          <ul class="list-unstyled">
+                            <li><a href="index.html#" class="dropdown-item">Coats</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Jackets</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Suits</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Dresses</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Cardigans &amp; sweaters</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Sweatshirts &amp; hoodies</a></li>
+                            <li><a href="index.html#" class="dropdown-item">T-shirts &amp; tops</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Pants</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Jeans</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Shorts</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Skirts</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Lingerie &amp; nightwear</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Sportswear</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-3 py-2">
+                          <h4 class="fs-sm text-uppercase pt-1 mb-2">Shoes</h4>
+                          <ul class="list-unstyled">
+                            <li><a href="index.html#" class="dropdown-item">Boots</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Flat shoes</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Heels</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Sandals</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Mules</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Sliders</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Slippers</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Sneakers</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Leather</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-3 py-2">
+                          <h4 class="fs-sm text-uppercase pt-1 mb-2">Accessories</h4>
+                          <ul class="list-unstyled">
+                            <li><a href="index.html#" class="dropdown-item">Bags &amp; backpacks</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Hats &amp; scarves</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Hair accessories</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Belts</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Jewellery</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Watches</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Sunglasses</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Purses</a></li>
+                            <li><a href="index.html#" class="dropdown-item">Socks &amp; tights</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-1 d-none d-lg-block py-2">
+                          <span class="divider-vertical h-100 mx-auto"></span>
+                        </div>
+                        <div class="col-lg-3 d-none d-lg-block py-2">
+                          <a href="index.html#" class="d-block text-decoration-none pt-1">
+                            <img src="/static/assets/img/ecommerce/megamenu.jpg" class="d-block rounded mb-3" alt="Promo banner">
+                            <h5 class="fs-sm mb-3">Back to school. Sale up to 50%</h5>
+                            <div class="btn btn-outline-primary btn-sm">
+                              See offers
+                              <i class="ci-arrow-right ms-1"></i>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                  <a href="index.html#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">A minha conta</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="account-profile.html" class="dropdown-item">Profile</a></li>
+                    <li><a href="account-orders.html" class="dropdown-item">My Orders</a></li>
+                    <li><a href="account-wishlist.html" class="dropdown-item">Wishlist</a></li>
+                    <li><a href="account-recently-viewed.html" class="dropdown-item">Recently Viewed</a></li>
+                    <li><a href="account-reviews.html" class="dropdown-item">My Reviews</a></li>
+                  </ul>
+                </li>
+                {% else %}                
+                <li class="nav-item">
+                  <a href="account-profile.html" class="nav-link d-lg-none">
+                    <i class="ci-profile fs-base align-middle me-1"></i>
+                    Annette Black
+                  </a>
+                </li>
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {% block content %}
+
+
+      {% endblock %}
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer pt-sm-5 pt-4 bg-dark">
+      <div class="container pt-3">
+        <div class="row pb-sm-2">
+          <div class="col-6 col-sm-3 col-lg-2 mb-4">
+            <h3 class="h6 mb-2 pb-1 text-uppercase text-light">Ajuda</h3>
+            <ul class="nav nav-light flex-column">
+              <li class="nav-item mb-2">
+                <a href="lojahome#" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Entrega e devolução</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="contacts" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">PFQ</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="order-tracking" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Ordem de trilha</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="contacts" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Contatos</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-3 col-lg-2 col-xl-3 mb-4">
+            <h3 class="h6 mb-2 pb-1 text-uppercase text-light ps-xl-6">Loja</h3>
+            <ul class="nav nav-light flex-column ps-xl-6">
+              <li class="nav-item mb-2">
+                <a href="lojahome#" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Recém-chegados</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="lojahome#" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Recém-chegados</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="lojahome#" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Vendas</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="lojahome#" class="nav-link me-lg-0 me-sm-4 p-0 fw-normal">Marcas</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-lg-3 pb-2 pb-lg-0 mb-4">
+
+            <h3 class="h6 mb-2 pb-1 text-uppercase text-light">ENTRE EM CONTATO</h3>
+            <ul class="nav nav-light flex-column pb-3">
+              <li class="nav-item text-nowrap mb-2">
+                <span class="text-light me-1">Chamar:</span>
+                <a href="tel:{{logotipo.contacglass}}" class="nav-link d-inline-block me-lg-0 me-sm-4 p-0 fw-normal">{{ logotipo.contactglass }}</a>
+              </li>
+              <li class="nav-item text-nowrap mb-2">
+                <span class="text-light me-1">Email:</span>
+                <a href="mailto:{{logotipo.emailglass}}" class="nav-link d-inline-block me-lg-0 me-sm-4 p-0 fw-normal">{{ logotipo.emailsglass2 }}</a>
+              </li>
+            </ul>
+            <a href="/#" class="btn-social bs-solid bs-light me-2">
+              <i class="ci-facebook"></i>
+            </a>
+            <a href="/#" class="btn-social bs-solid bs-light me-2">
+              <i class="ci-instagram"></i>
+            </a>
+            <a href="/#" class="btn-social bs-solid bs-light me-2">
+              <i class="ci-twitter"></i>
+            </a>
+            <a href="/#" class="btn-social bs-solid bs-light me-2">
+              <i class="ci-youtube"></i>
+            </a>
+            <a href="/#" class="btn-social bs-solid bs-light">
+              <i class="ci-pinterest"></i>
+            </a>
+          </div>
+          <div class="col-lg-4 col-xl-3 mb-4">
+            <h3 class="h6 mb-3 pb-1 text-uppercase text-light">BAIXE NOSSO APLICATIVO</h3>
+            <div class="d-flex flex-wrap flex-sm-nowrap">
+              <a href="lojahome#" class="btn-market btn-apple mb-3 me-3" role="button">
+                <span class="btn-market-subtitle">Baixe no</span>
+                <span class="btn-market-title">App Store</span>
+              </a>
+              <a href="/#" class="btn-market btn-google mb-3" role="button">
+                <span class="btn-market-subtitle">Baixe no</span>
+                <span class="btn-market-title">Google Play</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="border-top border-light">
+        <div class="container py-4">
+          <div class="fs-xs text-light">
+            <span class="fs-sm">&copy; </span>
+            Todos os direitos reservados. Feito com por
+            <i class="ci-heart mt-n1 mx-1 fs-base text-primary align-middle"></i>
+            <a href="https://glassmirror.ao/" class="text-light" target="_blank" rel="noopener noreferrer">NARCIDI</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button-->
+    <a class="btn-scroll-top" href="index.html#top" data-scroll data-fixed-element>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon ci-angle-up"></i>
+    </a>
+
+
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="/static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="/static/assets/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+
+    <!-- Main theme script-->
+    <script src="/static/assets/js/theme.min.js"></script>
+    <script type="text/javascript" src="{% static 'index.js' %}"></script>
+  </body>
+</html>

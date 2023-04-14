@@ -1,0 +1,357 @@
+{% extends "base.html" %} {% block title %}HospedagemRevenda{% endblock %}
+
+{% block content %}
+      <!-- Page title-->
+      <section class="py-md-6 py-5 bg-dark jarallax" data-jarallax data-speed="0.6">
+        <div class="container mt-5 py-lg-4">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-alt breadcrumb-light justify-content-center mb-sm-4">
+              <li class="breadcrumb-item">
+                <a href="index">
+                  <i class="ci-home"></i>
+                </a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="">HospedagemRevenda</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Hospedagem</li>
+            </ol>
+          </nav>
+          <h5 class="display-1 text-center text-light">HOSPEDE SEUS WEBSITES COM ESPECIALISTAS</h5>
+          <p class="mx-auto mb-lg-6 mb-sm-5 pb-3 lead text-center text-light opacity-60" style="max-width: 810px;">Hospedagem de sites fácil para começar. E crescer também. Mais seguro Site rápido Sempre disponível Suporte 24/24 .</p>
+
+          <form class="col-lg-6 col-md-8 col-sm-10 d-sm-block d-none mx-auto px-3">
+            <label for="seo-analyse" class="form-label-lg text-light">URL do seu site</label>
+            <div class="input-group">
+              <input id="seo-analyse" class="form-control form-control-lg input-light" type="url" placeholder="nomedasuaempresa.com" required>
+              <button class="btn btn-primary" type="submit">Analizar Dominio</button>
+            </div>
+          </form>
+
+          <!-- SEO analyse form mobile -->
+          <form class="d-sm-none d-block">
+            <div class="mb-4">
+              <label for="seo-analyse-m" class="form-label-lg text-light">URL do seu site</label>
+              <input id="seo-analyse-m" class="form-control input-light" type="url" placeholder="nomedasuaempresa.com" required>
+              <button type="submit" class="btn btn-primary d-block w-100 mt-3">Analizar Dominio</button>
+            </div>
+          </form>
+
+
+          <div class="d-flex flex-md-row flex-column justify-content-center">
+            {% for logotipo in logotipos %}
+            <div class="d-flex flex-md-row flex-column align-items-center mb-md-0 mb-4 px-md-0 px-sm-5 px-4 pb-md-0 pb-2 text-md-start text-center">
+              <i class="ci-chat me-md-2 mb-md-0 mb-3 text-primary" style="font-size: 40px;"></i>
+              <div class="ps-md-1">
+                <h6 class="mb-0 fs-sm text-light opacity-60">Fale conosco.</h6>
+                <a href="mailto:{{logotipo.emailsglass}}" class="fs-lg text-decoration-none text-light">{{logotipo.emailsglass}}</a>
+              </div>
+            </div>
+            <span class="divider-vertical divider-light d-md-block d-none mx-5"></span>
+            <div class="d-flex flex-md-row flex-column align-items-center mb-md-0 mb-4 px-md-0 px-sm-5 px-4 pb-md-0 pb-2 text-md-start text-center">
+              <i class="ci-iphone me-md-2 mb-md-0 mb-3 text-primary" style="font-size: 40px;"></i>
+              <div class="ps-md-1">
+                <h6 class="mb-0 fs-sm text-light opacity-60">Ligue para nós.</h6>
+                <a href="tel:(+244){{logotipo.contactglass}}" class="fs-lg text-decoration-none text-light">{{logotipo.contactglass}}</a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+
+        </div>
+
+        <!-- Parallax bg -->
+        <div class="jarallax-img bg-repeat-0 bg-dark opacity-50" style="background-image: url(/static/assets/img/seo-agency/about/careers/page-title-bg.jpg);"></div>
+      </section>
+
+<!-- Shaped bg -->
+<div class="bg-repeat-0 bg-position-center-bottom bg-size-contain" style="background-image: url(/static/assets/img/seo-agency/shapes/stroke/02.svg)">
+
+        <section class="mt-md-4 pt-lg-6 pt-5 pb-4 bg-repeat-0 bg-position-center-end bg-size-contain" style="background-image: url(/static/assets/img/seo-agency/shapes/fill/02.svg)">
+          <div class="container">
+            <h2 class="h1 mb-md-5 pb-3 text-center">Para Hospedar Conosco?</h2>
+            <!-- Vertical steps -->
+            <div class="row justify-content-center">
+              <div class="col-lg-9">
+
+                <!-- Step -->
+                <div class="step-vertical">
+                  <div class="step-line text-primary"></div>
+                  <div class="step-body">
+                    <h4 class="h6 mb-0 fs-xs fw-black text-muted text-uppercase">PASSO 1</h4>
+                    <h3 class="h5 mb-2">Escolher um Pacote</h3>
+                    <p class="mb-0 text-muted">.</p>
+                  </div>
+                </div>
+
+                <!-- Step -->
+                <div class="step-vertical">
+                  <div class="step-line text-primary"></div>
+                  <div class="step-body">
+                    <h4 class="h6 mb-0 fs-xs fw-black text-muted text-uppercase">PASSO 2</h4>
+                    <h3 class="h5 mb-2">Preencher o Formulario</h3>
+                    <p class="mb-0 text-muted">.</p>
+                  </div>
+                </div>
+
+                <!-- Step -->
+                <div class="step-vertical">
+                  <div class="step-line text-primary"></div>
+                  <div class="step-body">
+                    <h4 class="h6 mb-0 fs-xs fw-black text-muted text-uppercase">PASSO 3</h4>
+                    <h3 class="h5 mb-2">Aceitar os Termos</h3>
+                    <p class="mb-0 text-muted">. </p>
+                  </div>
+                </div>
+                <!-- Step -->
+                <div class="step-vertical">
+                  <div class="step-line text-primary"></div>
+                  <div class="step-body">
+                    <h4 class="h6 mb-0 fs-xs fw-black text-muted text-uppercase">PASSO 4</h4>
+                    <h3 class="h5 mb-2">Confrimar no seu Email</h3>
+                    <p class="mb-0 text-muted">.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Pricing -->
+  <!-- Pricing -->
+  <section class="container mt-md-4 pt-lg-6 pt-5 pb-4">
+    <h2 class="h1 mb-md-5 pb-2 text-center">Planos de preços flexíveis</h2>
+    <h4 class="h4 mb-md-5 pb-2 text-center">Comece a construir sua presença na web por apenas 4.000kz ao mês</h4>
+    <p class="mb-md-5 pb-2 text-center">Comece seu negócio online hoje 99% de tempo de funcionamento para alto desempenho</p>
+
+    <!-- Vertical pricing plan wrapper + Carousel -->
+    <div class="pricing-wrap tns-carousel-wrapper tns-nav-outside">
+
+      <!-- Price switch -->
+      <div class="mx-auto mb-md-5 mb-4 pb-2" style="max-width: 390px;">
+        <div class="switch">
+          <input class="switch-input visually-hidden" type="checkbox" id="switchAlt">
+          <label class="switch-label" for="switchAlt">
+            <span class="switch-label-item">Mensal</span>
+            <span class="switch-label-item">Anual
+              <small class="ms-2 fs-xs fw-normal">-12% Off</small>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="tns-carousel-inner" data-carousel-options='{
+        "gutter": 30,
+        "loop": false,
+        "controls": false,
+        "responsive": {
+          "0": {
+            "items": 1,
+            "nav": true
+          },
+          "576": {
+            "items": 2
+          },
+          "992": {
+            "items": 3,
+            "nav": false
+          }
+        }
+      }'>
+
+        <div><!-- Plan card -->
+          <div class="card h-100">
+            <div class="card-img-top text-center pt-4">
+              <h3 class="mt-3 mb-2">Hospedagem Basica</h3>
+            </div>
+            <div class="card-body pt-0">
+              <div class="display-4 d-flex justify-content-center mb-3 py-2 px-4 text-primary">Kz
+                <span class="price" data-current-price="4.000" data-new-price="42.240">4.000</span>
+                <sup class="lead fw-bold mt-4 ms-2">/mes</sup>
+              </div>
+              <hr class="hr-gradient mx-n4 mb-4">
+              <ul class="list-unstyled d-table mx-auto mb-0 pb-2">
+
+                    <div class="price_sect">
+                      <p>O ponto de partida perfeito para marcar a sua presença online.</p>
+                        <ul class="list">
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i><b>6 GB</b> de Armazenamento</li>
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i>Tráfego <b>Ilimitado</b> </li>
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i><b>10</b> Contas de E-mail</li>
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i>E-mail por Hora <b>200</b></li>
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i>Base de Dados <b>Ilimitado</b></li>
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i>Contas FTP <b>Ilimitado</b></li>
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i>Sub-domínios <b>2</b></li>
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i>
+                          <a href="http://demo.softaculous.com/enduser/" target="_blank">Softaculous</a>
+                          <b>Grátis</b></li>
+                          <li class="d-flex align-items-center mb-2">
+                            <i class="ci-checkmark text-primary me-2"></i>
+                          <a href="https://angoweb.ao/websites.php" target="_blank">Construtor de Sites </a>
+                          <b>Grátis</b>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i><b>128 MB</b> RAM Dedicado</li>
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i>Imunify360 &amp; Webshield</li>
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i>Servidor Web <b>Litespeed</b></li>
+                        <li class="d-flex align-items-center mb-2">
+                          <i class="ci-checkmark text-primary me-2"></i>Certificado SSL <b>Grátis</b></li>
+                      </ul>
+                      <div class="bottom_sect">
+                        <h4>Garantia de 30 dias</h4>
+                        <p>Teste por 30 dias sem compromissocom a garantia de reembolso integral se não ficar satisfeito.</p>
+                      </div>
+                    </div>
+
+              </ul>
+            </div>
+            <div class="card-footer pt-0 border-0 text-center">
+              <a class="btn btn-outline-primary mb-4" href="#">Formulario</a>
+            </div>
+          </div>
+        </div>
+
+        <div><!-- Featured plan card -->
+          <div class="card border-success bg-dark h-100">
+            <div class="card-img-top text-center pt-4">
+              <h3 class="mt-3 mb-2 text-white">Hospedagem Optima</h3>
+            </div>
+            <div class="card-body pt-0">
+              <div class="display-4 d-flex justify-content-center mb-3 py-2 px-4 text-success">Kz
+                <span class="price" data-current-price="6.400" data-new-price="67.584">6.400</span>
+                <sup class="lead fw-bold mt-4 ms-2">/mes</sup>
+              </div>
+              <hr class="hr-gradient hr-light mx-n4 mb-4">
+              <ul class="list-unstyled d-table mx-auto mb-0 pb-2">
+                <div class="price_sect">
+                  <p><span class="text-white">O ponto de partida perfeito para marcar a sua presença online.</span></p>
+                    <ul class="list">
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><span class="text-white"><b>16 GB</b> de Armazenamento</span></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><span class="text-white">Tráfego <b>Ilimitado</b></span> </li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><span class="text-white"><b>30</b> Contas de E-mail</span></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><span class="text-white">E-mail por Hora <b>250</b></span></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><span class="text-white">Base de Dados <b>Ilimitado</b></span></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><span class="text-white">Contas FTP <b>Ilimitado</b></span></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><span class="text-white">Sub-domínios <b>7</b></span></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i>
+                      <a href="http://demo.softaculous.com/enduser/" target="_blank"><span class="text-white">Softaculous</span></a>
+                      <b>Grátis</b></li>
+                      <li class="d-flex align-items-center mb-2">
+                        <i class="ci-checkmark text-primary me-2"></i>
+                      <a href="https://angoweb.ao/websites.php" target="_blank"><span class="text-white">Construtor de Sites </span></a>
+                      <b>Grátis</b>
+                    </li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><span class="text-white"><b>258 MB</b> RAM Dedicado</span></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><span class="text-white">Imunify360 &amp; Webshield</span></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><span class="text-white">Servidor Web <b>Litespeed</b></span></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><span class="text-white">Certificado SSL <b>Grátis</b></span></li>
+                  </ul>
+                  <div class="bottom_sect">
+                    <h4><span class="text-white">Garantia de 30 dias</span></h4>
+                    <p><span class="text-white">Teste por 30 dias sem compromissocom a garantia de reembolso integral se não ficar satisfeito.</span></p>
+                  </div>
+                </div>
+
+
+
+
+              </ul>
+            </div>
+            <div class="card-footer pt-0 border-0 text-center">
+              <a class="btn btn-primary mb-4" href="#">Formulario</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div><!-- Plan card -->
+          <div class="card h-100">
+            <div class="card-img-top text-center pt-4">
+              <h3 class="mt-3 mb-2">Hospedagem Premium</h3>
+            </div>
+            <div class="card-body pt-0">
+              <div class="display-4 d-flex justify-content-center mb-3 py-2 px-4 text-primary">Kz
+                <span class="price" data-current-price="9.800" data-new-price="103.488">9.800</span>
+                <sup class="lead fw-bold mt-4 ms-2">/mes</sup>
+              </div>
+              <hr class="hr-gradient mx-n4 mb-4">
+              <ul class="list-unstyled d-table mx-auto mb-0 pb-2">
+                <div class="price_sect">
+                  <p>O ponto de partida perfeito para marcar a sua presença online.</p>
+                    <ul class="list">
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><b>32 GB</b> de Armazenamento</li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i>Tráfego <b>Ilimitado</b> </li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i>Contas de E-mail <b>Ilimitadas</b> </li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i>E-mail por Hora <b>300</b></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i>Base de Dados <b>Ilimitado</b></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i>Contas FTP <b>Ilimitado</b></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i>Sub-domínios <b>Ilimitado</b></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i>
+                      <a href="http://demo.softaculous.com/enduser/" target="_blank">Softaculous</a>
+                      <b>Grátis</b></li>
+                      <li class="d-flex align-items-center mb-2">
+                        <i class="ci-checkmark text-primary me-2"></i>
+                      <a href="https://angoweb.ao/websites.php" target="_blank">Construtor de Sites </a>
+                      <b>Grátis</b>
+                    </li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i><b>528 MB</b> RAM Dedicado</li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i>Imunify360 &amp; Webshield</li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i>Servidor Web <b>Litespeed</b></li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="ci-checkmark text-primary me-2"></i>Certificado SSL <b>Grátis</b></li>
+                  </ul>
+                  <div class="bottom_sect">
+                    <h4>Garantia de 30 dias</h4>
+                    <p>Teste por 30 dias sem compromissocom a garantia de reembolso integral se não ficar satisfeito.</p>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div class="card-footer pt-0 border-0 text-center">
+              <a class="btn btn-outline-primary mb-4" href="#">Formulario</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+</div> <!-- / Shaped bg -->
+
+
+{% endblock %}

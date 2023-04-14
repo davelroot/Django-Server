@@ -1,0 +1,88 @@
+{% extends "/documentacions/homebase.html" %}
+{% block content %}
+{% if brands %}
+
+
+            <!-- Product card: Basic example-->
+            <!-- Page title-->
+            <div class="border-bottom pt-5 mt-2 mb-5">
+              <h1 class="mt-2 mt-md-4 mb-3 pt-5"></h1>
+              <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+                <p class="text-muted"></p>
+                <div class="ps-md-4 mb-3">
+                <span class="badge bg-success"></span>
+              </div>
+            </div>
+          </div>
+
+<!--==========END NAVBAR ==============-->
+<section class="pb-5 mb-md-2" id="product-card">
+  <h2 class="h3">{% if updatebrand %} Update {% else %}Add a {% endif %} s</h2>
+  {% include '_messages.html' %}
+  <div class="card shadow-sm">
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="text-center  p-2 h3 mb-3"></div>
+                <form method=post>
+                <div>
+
+                 <form action="" method="post">
+                     {% if updatebrand %}
+                     <input type="text" name="brand" class="form-control" value="{{updatebrand.name}}">
+                        <div class="col-md-4"> <input type="file" name="image_brand" id="image_brand">
+                            <a href="{{url_for('static',filename='assets/img/ecommerce/shop/' + updatebrand.image_brand)}}"> assets/img/ecommerce/shop/{{ updatebrand.image_brand}}</a>
+                        </div>   
+                     <input type="submit" value="update brand" class="btn btn-info mt-3">
+                     {% else %}
+                     <input type="text" name="brand" class="form-control">
+                     <input type="file" name="image_brand" class="form-control">
+                     <input type="submit" value="Add a brand" class="btn btn-info mt-3" style="height: 1%">
+                     {% endif %}
+
+                 </form>
+                </div>
+                </form>
+                {% else %}
+            <!-- Product card: Basic example-->
+            <!-- Page title-->
+            <div class="border-bottom pt-5 mt-2 mb-5">
+              <h1 class="mt-2 mt-md-4 mb-3 pt-5"></h1>
+              <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+                <p class="text-muted"></p>
+                <div class="ps-md-4 mb-3">
+                <span class="badge bg-success"></span>
+              </div>
+            </div>
+          </div>                
+                <div class="text-center  p-2 h3 mb-3">{% if updatecat %}Upade {% else %}Add a {% endif %}category</div>
+                {% include '_messages.html' %}
+                <form method=post>
+                <div>
+              {% from "_formhelpers.html" import render_field %}
+                 <form action="" method="post">
+                     {% if updatecat %}
+                     <input type="text" name="category" class="form-control" value="{{updatecat.name}}">
+                        <div class="col-md-4"> <input type="file" name="image_categor" id="image_categor">
+                            <a href="{{url_for('static',filename='assets/img/ecommerce/shop/' + updatecat.image_categor)}}"> assets/img/ecommerce/shop/{{ updatecat.image_categor}}</a>
+                        </div>                     
+                     <input type="submit" value="Update category" class="btn btn-info mt-3">
+                     {% else %}
+                     <input type="text" name="category" class="form-control">
+                      
+                      {{ render_field(form.image_categor, class="form-control" ) }}
+                     <input type="submit" value="Add a category" class="btn btn-info mt-3"  style="height: 1%">
+                     {% endif %}
+
+                 </form>
+                </div>
+                </form>
+                {% endif %}
+            </div>
+      <div class="col-md-3"></div>
+    </div>
+</div>
+</div>
+</section>>
+{% endblock content %}

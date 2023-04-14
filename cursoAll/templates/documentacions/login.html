@@ -1,0 +1,71 @@
+{% extends "/documentacions/bases.html" %}
+{% block title %}Acesso Administrador {% endblock %}
+
+{% block content %}
+<div class="content-section">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content border-0">
+          <!-- Sign in form -->
+            <div class="view show" id="modal-signin-view">
+              <div class="modal-header border-0 pb-0 px-md-5 px-4 d-block position-relative">
+                <h3 class="modal-title mt-4 mb-0 text-center">GlassMirror</h3>
+            </div>
+              <div class="modal-body px-md-5 px-4">
+                <p class="fs-sm text-muted text-center">Seja Bem Vindo</p>
+                {% include '_messages.html' %}
+                <form class="needs-validation" method="POST" novalidate>
+                  {{ form.hidden_tag() }}
+                  <fieldset class="form-group">
+                  <legend class="border-bottom mb-4">Logar</legend>
+                  <div class="mb-4">
+                    {{ form.email.label(class="form-label-lg") }}
+                      {% if form.email.errors %}
+                      {{ form.email( class="form-control form-control-lg is-invalid", style="height: 1%;"  ) }}
+                        <div class="invalid-feedback">
+                          {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                      {% else %}
+                      {{ form.email( class="form-control", style="height: 1%;"  ) }}
+                      {% endif %}
+                  </div>
+                  <div class="mb-4">
+                    {{ form.password.label(class="form-label-lg") }}
+                      {% if form.password.errors %}
+                      {{ form.password( class="form-control form-control-lg is-invalid", style="height: 1%;"  ) }}
+                        <div class="invalid-feedback">
+                          {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                      {% else %}
+                      {{ form.password( class="form-control", style="height: 1%;"  ) }}
+                      <label class="password-toggle-btn" aria-label="Show/hide password">
+                        <input class="password-toggle-check" type="checkbox">
+                        <span class="password-toggle-indicator"></span>
+                      </label>
+                      {% endif %}
+                  </div>
+                  <div class="form-group">
+                    {{ form.remenber(class="form-check-input") }}
+                    {{ form.remenber.label(class="form-check-label", style="height: 1%;" ) }}
+                  </div>
+                  <small class="text-muted ml-2">
+                      <a href="#" class="fw-bold text-decoration-none" >Forgot Password</a>
+                  </small>
+
+                  </fieldset>
+                  {{ form.submit( class="btn btn-primary btn-hover-shadow d-block w-100", style="height: 1%;"  ) }}
+                  <small class="text-muted">
+                    <p class="fs-sm pt-4 mb-0">Already have an account?
+                      <a href="#" class="fw-bold text-decoration-none" >Sign in</a>
+                    </p>
+                  </small>
+                </form>
+              </div>
+            </div>
+        </div>
+      </div>
+</div>
+{% endblock content %}

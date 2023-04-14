@@ -1,0 +1,5 @@
+email_host = 'glassapi.glassmirrortecnologicia.co.ao'
+email_port = '8023'
+email_host_user = 'comercial@glassmirrortecnologicia.co.ao'
+email_host_password = 'mypass'
+default_from_email = 'mail.glass@glassmirrortecnologicia.co.ao'

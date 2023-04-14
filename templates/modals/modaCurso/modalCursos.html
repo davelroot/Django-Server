@@ -1,0 +1,44 @@
+<!-- Sign in modal-->
+
+      <div class="modal fade" id="modal-signin" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content border-0">
+            <!-- Sign up form -->
+            <!-- Sign in form -->
+            <div class="view show" id="modal-signin-view">
+              <div class="modal-header border-0 pb-0 px-md-5 px-4 d-block position-relative">
+                <h3 class="modal-title mt-4 mb-0 text-center">Add Cursos</h3>
+                <button type="button" class="btn-close position-absolute" style="top: 1.5rem; right: 1.5rem;" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body px-md-5 px-4">
+                {% from "_formhelpers.html" import render_field %}
+                <form class="needs-validation" novalidate>
+
+                  <div class="mb-4">
+                    {{ render_field(form.nomeCurso, class="form-control", placeholder="Digite seu Nome Completo", style="height: 1%;" ) }}
+                    {{ render_field(form.imagesCurso, class="form-control", placeholder="Digite seu Nome Completo", style="height: 1%;" ) }}
+                    {{ render_field(form.sobreCurso, class="form-control", placeholder="Digite seu Nome Completo", style="height: 1%;" ) }}
+                    {{ render_field(form.voceaprenderCurso, class="form-control", placeholder="Digite seu Nome Completo", style="height: 1%;" ) }}
+                    {{ render_field(form.formadorCurso, class="form-control", placeholder="Digite seu Nome Completo", style="height: 1%;" ) }}
+                    {{ render_field(form.dataInicioCuros, class="form-control", placeholder="Digite seu Nome Completo", style="height: 1%;" ) }}
+                    {{ render_field(form.dataFimCurso, class="form-control", placeholder="Digite seu Nome Completo", style="height: 1%;" ) }}
+                    {{ render_field(form.precoCurso, class="form-control", placeholder="Digite seu Nome Completo", style="height: 1%;" ) }}
+                    {{ render_field(form.duracaoCurso, class="form-control", placeholder="Digite seu Nome Completo", style="height: 1%;" ) }}
+                    {{ render_field(form.benefiosCurso, class="form-control", placeholder="Digite seu Nome Completo", style="height: 1%;" ) }}
+                    {{ render_field(form.licao_1, class="form-control", placeholder="licao 1", style="height: 1%;" ) }}
+                    {{ render_field(form.licao_2, class="form-control", placeholder="licao 2", style="height: 1%;" ) }}
+                    {{ render_field(form.licao_3, class="form-control", placeholder="licao 3", style="height: 1%;" ) }}
+                    {{ render_field(form.licao_4, class="form-control", placeholder="licao 4", style="height: 1%;" ) }}
+                    {{ render_field(form.licao_5, class="form-control", placeholder="licao 5", style="height: 1%;" ) }}
+                    {{ render_field(form.licao_6, class="form-control", placeholder="licao 6", style="height: 1%;" ) }}
+                    {{ render_field(form.licao_7, class="form-control", placeholder="licao 7", style="height: 1%;" ) }}
+                    {{ render_field(form.licao_8, class="form-control", placeholder="licao 8", style="height: 1%;" ) }}
+                    {{ render_field(form.licao_9, class="form-control", placeholder="licao 9", style="height: 1%;" ) }}
+                  </div>
+                  <button class="btn btn-primary btn-hover-shadow d-block w-100" type="submit">Sign up</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

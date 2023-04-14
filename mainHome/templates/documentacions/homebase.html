@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Createx - Multipurpose Bootstrap Template">
+    <meta name="keywords" content="bootstrap, business, creative agency, construction, services, e-commerce, mobile app showcase, multipurpose, shop, ui kit, marketing, seo, landing, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Createx Studio">
+
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/img/favicon-16x16.png">
+    <link rel="manifest" href="/static/assets/img/site.webmanifest">
+    <link rel="mask-icon" color="#5bbad5" href="/static/assets/img/safari-pinned-tab.svg">
+
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="/static/assets/vendor/lightgallery.js/dist/css/lightgallery.min.css"/>
+    <link rel="stylesheet" media="screen" href="/static/assets/vendor/simplebar/dist/simplebar.min.css"/>
+    <link rel="stylesheet" media="screen" href="/static/assets/vendor/tiny-slider/dist/tiny-slider.css"/>
+    <link rel="stylesheet" media="screen" href="/static/icons/demo-files/demo.css">
+    <link rel="stylesheet" media="screen" href="/static/icons/style.css">
+
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="/static/assets/css/theme.min.css">
+
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #787a80;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #cfcfd1;
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+    </script>
+
+    <!-- Demo switcher offcanvas toggle styles -->
+    <style>
+      .demo-switcher {
+        position: fixed;
+        display: block;
+        top: 50%;
+        right: 1rem;
+        z-index: 100;
+      }
+      .demo-switcher-inner {
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid #e5e8ed;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #1e212c;
+        font-size: 1.25rem;
+        line-height: 3rem;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0px 10px 15px 0px rgba(30,33,44,0.10);
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WKV3GT5');
+    </script>
+  </head>
+
+
+  <!-- Body-->
+  <body>
+
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+    </noscript>
+
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>A Carregar...</span>
+      </div>
+    </div>
+
+    <!-- Main content-->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper position-relative">
+      <!-- Main content-->
+      <section class="offcanvas-enabled-start row pb-3 pb-md-4">
+        <div class="col-xl-9">
+        <!-- Navbar -->      <!-- Navbar -->
+      <!-- Remove .navbar-sticky class to detach .navbar from page scroll -->
+      <header class="header navbar navbar-expand-lg navbar-dark navbar-sticky navbar-floating">
+        <div class="container px-0 px-xl-3">
+          <a class="navbar-brand order-lg-1 me-lg-5 me-0 pe-lg-2" href="{{url_for('auth.allConfigGM')}}">
+            <img class="navbar-brand-static" src="/static/assets/img/seo-agency/logo-light.png" alt="GlassMirror" width="130">
+            <img class="navbar-brand-floating" src="/static/assets/img/seo-agency/logo-dark.png" alt="GlassMirror" width="130">
+          </a>
+          <nav class="collapse navbar-collapse order-lg-2" id="navbarCollapse1">
+            <ul class="navbar-nav me-auto text-nowrap">
+
+
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- Navbar-->
+      <header class="navbar navbar-expand navbar-light fixed-top navbar-shadow bg-light px-3 px-lg-4" data-scroll-header data-fixed-element>
+        <a class="navbar-brand d-lg-none" href="{{url_for('auth.allConfigGM')}}">
+          <img src="{{ url_for('static', filename = 'assets/img/seo-agency/logo-light.png') }}" alt="Createx" width="130">
+        </a>
+        <button class="navbar-toggler d-block d-lg-none me-3 ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#componentsNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav ms-auto d-none d-lg-flex align-items-center">
+          <li class="nav-item">
+            <a class="nav-link py-0" href="">
+              <i class="ci-eye align-middle mt-n1 me-2"></i>
+              views 
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <div class="nav-link disabled text-border px-1">|</div>
+          </li>
+          <li class="nav-item">
+
+            {% for inscritos in alunosinscrito %}
+            <a class="nav-link py-0" href="">
+              <i class="ci-files align-middle mt-n1 me-2"></i>
+              {{ inscritos.id }} Alunos
+            </a>
+            {% endfor %}
+
+          </li>
+          <li class="nav-item">
+            <div class="nav-link disabled text-border px-1">|</div>
+          </li>
+        </ul>
+      </header>
+      <!-- Side navigation (Offcanvas)-->
+      <aside class="offcanvas offcanvas-expand offcanvas-start bg-dark" id="componentsNav">
+        <div class="offcanvas-header d-none d-lg-block py-4">
+          <a class="navbar-brand py-2" href="{{url_for('auth.allConfigGM')}}">
+            <img src="{{ url_for('static', filename = 'assets/img/seo-agency/logo-light.png') }}" alt="Createx" width="130">
+          </a>
+          <span class="badge bg-success"><a href="{{url_for('main.index')}}">GMC</a></span>
+        </div>
+        <div class="offcanvas-header d-flex d-lg-none align-items-center">
+          <div class="d-flex align-items-center mt-1">
+            <h5 class="text-light mb-0 me-3">c</h5>
+            <span class="badge bg-success"><a  href="{{url_for('main.index')}}">GMC</a></span>
+          </div>
+          <button class="btn-close btn-close-white" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="d-flex d-lg-none align-items-center py-4 px-3 border-bottom border-light">
+          <a class="btn btn-primary d-block w-100 me-3" href=""><i class="ci-eye mt-n1 me-2"></i>Preview</a>
+          <a class="btn btn-warning d-block w-100 mt-0" href=""><i class="ci-files mt-n1 me-2"></i>Docs</a>
+        </div>
+        <div class="offcanvas-body px-0 pt-4 pb-grid-gutter" data-simplebar data-simplebar-inverse>
+          <h6 class="fs-lg text-light px-4 mt-2 mb-3">Centro de Formacao</h6>
+          <hr class="hr-gradient hr-light mt-0 mb-2 opacity-25">
+          <nav class="nav nav-light">
+          <a class="nav-link px-4" href="{{url_for('auth.cursos')}}">Ver Cursos</a>
+          <a class="nav-link px-4" href="{{url_for('auth.formadores')}}">Ver Formadores</a>
+          <a class="nav-link px-4" href="{{url_for('auth.periodos')}}">Ver Turnos</a>
+          <a class="nav-link px-4" href="{{url_for('auth.alunosinscrito')}}">Ver Alunos</a>
+          <a class="nav-link px-4" href="{{url_for('cursosAll.addcursosnews')}}">Add Cursos</a>
+          <a class="nav-link px-4" href="{{url_for('cursosAll.addformador')}}">Add Formador</a>
+          <a class="nav-link px-4" href="{{url_for('cursosAll.addturno')}}">Add Turno</a>
+          <a class="nav-link px-4" href="">Add Eventos  Palestras</a>
+          </nav>
+
+          <h6 class="fs-lg text-light px-4 pt-1 mt-4 mb-3">LojaVirtual</h6>
+          <hr class="hr-gradient hr-light mt-0 mb-2 opacity-25">
+          <nav class="nav nav-light">
+            <a class="nav-link px-4" href="{{url_for('auth.brands')}}">Ver Marcas</a>
+            <a class="nav-link px-4" href="{{url_for('auth.categories')}}">Ver Categorias</a>
+            <a class="nav-link px-4" href="{{url_for('loja.addproduct')}}">Add productos</a>
+            <a class="nav-link px-4" href="{{url_for('loja.addbrand')}}">add Marcas</a>
+            <a class="nav-link px-4" href="{{url_for('loja.addcat')}}">add Categorias</a>
+
+          </nav>
+
+          <h6 class="fs-lg text-light px-4 pt-1 mt-4 mb-3">Configuracoes</h6>
+          <hr class="hr-gradient hr-light mt-0 mb-2 opacity-25">
+          <nav class="nav nav-light">
+            <a class="nav-link px-4" href="NetFlixConfig">NetFlix</a>
+            <a class="nav-link px-4" href="HospedagemCompartilhadaConfig">Hospedagem Compartilhada</a>
+            <a class="nav-link px-4" href="RealizacaodeEventosConfig">Realização de Eventos</a>
+            <a class="nav-link px-4" href="CursosProfissionaisConfig">Cursos Profissionais</a>
+            <a class="nav-link px-4" href="ManuntecaoParaAppleConfig">Manuntecao Para Iphones, MAC, TV Apple</a>
+            <a class="nav-link px-4" href="HospedagemEmNuvemConfig">Hospedagem Em Nuvem</a>
+            <a class="nav-link px-4" href="SistemasdeGestaoConfig">Sistemas de Gestao</a>
+            <a class="nav-link px-4" href="GestaodeRedeSociasConfig">Gestao de Rede Socias</a>
+            <a class="nav-link px-4" href="DesignerGraficoConfig">Designer Grafico</a>
+            <a class="nav-link px-4" href="NossaLojaConfig">Nossa Loja</a>
+          </nav>
+          <h6 class="fs-lg text-light px-4 pt-1 mt-4 mb-3">Utilities</h6>
+          <hr class="hr-gradient hr-light mt-0 mb-2 opacity-25">
+          <nav class="nav nav-light">
+            <a class="nav-link px-4" href="{{url_for('auth.infoglassmirror')}}">Quem Somos</a>
+            <a class="nav-link px-4" href="contactsConfig">Contactos</a>
+          </nav>
+        </div>
+      </aside><!-- Quick (anchor) navigation-->
+      {% block content %}
+
+      {% endblock content %}
+        </div>
+      </section>
+    </main>
+
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="/static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="/static/assets/vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+    <script src="/static/assets/vendor/lg-video.js/dist/lg-video.min.js"></script>
+    <script src="/static/assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="/static/assets/vendor/parallax-js/dist/parallax.min.js"></script>
+    <script src="/static/assets/vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="/static/assets/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="/static/assets/vendor/progressbar.js/dist/progressbar.min.js"></script>
+
+    <!-- Main theme script-->
+    <script src="/static/assets/js/theme.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js')}}"></script>
+  </body>
+</html>
